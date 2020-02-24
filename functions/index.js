@@ -20,6 +20,10 @@ app.use('/developers', (req, res) => {
 	})
 })
 
+const voterRoutes = require('./voterRoutes')
+
+app.use('/voter', voterRoutes);
+
 exports.api = functions.https.onRequest(app);
 
 // // Create and Deploy Your First Cloud Functions
