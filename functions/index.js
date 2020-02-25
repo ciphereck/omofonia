@@ -21,8 +21,10 @@ app.use('/developers', (req, res) => {
 })
 
 const voterRoutes = require('./voterRoutes')
+const otpRoutes = require('./otpRoutes');
 
 app.use('/voter', voterRoutes);
+app.use('/otp', otpRoutes)
 
 exports.api = functions.https.onRequest(app);
 
