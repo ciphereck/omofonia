@@ -13,15 +13,54 @@ app.route('/info')
 
 
 function getInfo(req, res) {
-	query = req.query;
-	console.log(query);
-	res.send(query)
+	aadhaarNo = req.query.aadhaarNo;
+	
+	db
+		.child('voter')
+		.child(aadhaarNo)
+		.once('value')
+		.then((snapshot) => {
+			if(snapshot.val() === null) {
+
+				return res.send({
+					success: false,
+					message: `${aadhaarNo} doesn't exist.`
+				});
+			}
+
+			return res.send({
+				"success": true,
+				"data": snapshot.val(),
+				"message": "Sent voter info successfully"
+			})
+		})
+		.catch((err) => {
+			return res.send({
+				"success": false,
+				"message": "error in getting firebase",
+			})
+		})
 }
 
 function addInfo(req, res) {
-	params = req.body;
-	console.log(params);
-	res.send(params);
+	voterData = req.body.voterData;
+	
+	db
+		.child('voter')
+		.child(voterData.aadhaarNo)
+		.set(voterData)
+		.then((snapshot) => {
+			return res.send({
+				success: true,
+				message: `Added ${voterData.aadhaarNo} successfully`
+			});
+		})
+		.catch((err) => {
+			return res.send({
+				success: false,
+				message: "error occured"
+			})
+		})
 }
 
 
