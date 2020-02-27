@@ -4,12 +4,12 @@ const express = require('express');
 const app = express.Router();
 
 app.route('/')
-		.post(sendOtp);
+		.get(sendOtp);
 
 
 function sendOtp(req, res) {
-	mobileNo = req.body.mobileNo;
-	otp = req.body.otp;
+	mobileNo = req.query.mobileNo;
+	otp = req.query.otp;
 	const message = "Your otp is " + otp;
 	
 	return unirest

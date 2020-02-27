@@ -11,6 +11,9 @@ app.route('/info')
 		.get(getInfo)
 		.post(addInfo);
 
+app.route('/otp')
+		.post(sendOtp);
+
 
 function getInfo(req, res) {
 	aadhaarNo = req.query.aadhaarNo;
@@ -63,5 +66,24 @@ function addInfo(req, res) {
 		})
 }
 
+function sendOtp(req, res) {
+	console.log(req.url)
+	aadhaarNo = req.body.aadhaarNo;
+	db
+		.child('voter')
+		.child(aadhaarNo)
+		.once('value')
+		.then((snapshot) => {
+			if(snapshot.val() == null) {
+
+				return res.status(200).send({
+					success: false,
+					message: `${aadhaarNo} doesn't exist.`
+				});
+			}
+			let url = "../otp?mobileNo=" + snapshot.val().mobileNo + "&otp=" + req.body.otp;
+			return res.redirect(url);
+		})
+}
 
 module.exports = app
