@@ -3,7 +3,7 @@ const functions = require('firebase-functions');
 const express = require('express');
 const cors = require('cors');
 
-admin.initializeApp(functions.config().firebase);
+admin.initializeApp();
 
 const app = express();
 

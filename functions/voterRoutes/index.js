@@ -22,20 +22,20 @@ function getInfo(req, res) {
 		.then((snapshot) => {
 			if(snapshot.val() === null) {
 
-				return res.send({
+				return res.status(200).send({
 					success: false,
 					message: `${aadhaarNo} doesn't exist.`
 				});
 			}
 
-			return res.send({
+			return res.status(200).send({
 				"success": true,
 				"data": snapshot.val(),
 				"message": "Sent voter info successfully"
 			})
 		})
 		.catch((err) => {
-			return res.send({
+			return res.status(200).send({
 				"success": false,
 				"message": "error in getting firebase",
 			})
@@ -50,13 +50,13 @@ function addInfo(req, res) {
 		.child(voterData.aadhaarNo)
 		.set(voterData)
 		.then((snapshot) => {
-			return res.send({
+			return res.status(200).send({
 				success: true,
 				message: `Added ${voterData.aadhaarNo} successfully`
 			});
 		})
 		.catch((err) => {
-			return res.send({
+			return res.status(200).send({
 				success: false,
 				message: "error occured"
 			})
