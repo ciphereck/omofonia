@@ -12,10 +12,13 @@
     <script type="text/javascript" src="./js/config.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
+    <h1 id="name"></h1>
+    <h1 id="aadhaarNo"></h1>
     <script>
       const res = getDevelopers()
       res.then(data => {
-        console.log(data)
+        document.getElementById("name").innerHTML = data.data.name;
+        document.getElementById("aadhaarNo").innerHTML = data.data.aadhaarNo;
       })
     </script>
   </body>
