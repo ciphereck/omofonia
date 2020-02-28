@@ -1,13 +1,18 @@
 const admin = require('firebase-admin');
 
 const express = require('express')
-const app = express.Router();
+const app = express();
 
 const database = admin.database();
 const db = database.ref();
 
+const modifyRoutes = require('./electionCreate')
+
+app.use('/modify', modifyRoutes)
+
 app.route('/info')
 		.get(getElectionInfo)
+
 
 function getElectionInfo(req, res) {
 	electionId = req.query.electionId
