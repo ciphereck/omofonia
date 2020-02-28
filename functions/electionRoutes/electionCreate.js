@@ -9,6 +9,51 @@ const db = database.ref();
 app.route('/create')
 		.get(createElection)
 
+app.route('/candidate')
+		.post(addCandidate)
+
+
+function addCandidate(req, res) {
+	electionId = req.body.electionId
+	candidateData = req.body.candidateData
+
+	db
+		.child('election')
+		.child(electionId)
+		.child('candidate')
+		.once('value')
+		.then((snapshot) => {
+			if(snapshot.val() == null) {
+				return res.send({
+					"success": false,
+					"message": "no candidate or no election"
+				})
+			}
+
+			candidate = snapshot.val()
+			candidate.push(candidateData)
+
+			db
+				.child('election')
+				.child(electionId)
+				.child('candidate')
+				.set(candidate)
+				.then((snapshot) => {
+					return res.send({
+						"success": true,
+						"message": "added candidate successfully"
+					})
+				}).catch((err) => {
+					return res.send({
+						"success": false,
+						"message": "error occured" + err
+					})
+				})
+
+		})
+
+}
+
 
 function createElection(req, res) {
 	db
