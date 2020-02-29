@@ -14,6 +14,17 @@
     <script type="text/javascript" src="./js/index.js"></script>
     <h1 id="name"></h1>
     <h1 id="aadhaarNo"></h1>
+
+
+    <input type="text" id="aadhaarNo" name="fname" value=""><br>
+    <button id="myButton" class="float-left submit-button" >Get Aadhar Detail</button>
+
+    <script type="text/javascript">
+        document.getElementById("myButton").onclick = function () {
+            location.href = "www.yoursite.com";
+        };
+    </script>
+
     <script>
       const res = getDevelopers()
       res.then(data => {
