@@ -12,6 +12,9 @@ app.route('/create')
 app.route('/candidate')
 		.post(addCandidate)
 
+app.route('/status')
+		.post(updateStatus)
+
 
 function addCandidate(req, res) {
 	electionId = req.body.electionId
@@ -100,5 +103,29 @@ function createElection(req, res) {
 				})
 		})
 }
+
+function updateStatus(req, res) {
+	console.log(req.body.electionId)
+	console.log(req.body.status)
+	db
+		.child('election')
+		.child(req.body.electionId)
+		.update({
+			"status": req.body.status
+		})
+		.then((snapshot) => {
+					return res.send({
+						"success": true,
+						"message": "Status updated successfully"
+					})
+				}).catch((err) => {
+					return res.send({
+						"success": false,
+						"message": "error occured" + err
+					})
+				})
+
+}
+
 
 module.exports = app
