@@ -1,6 +1,6 @@
 const parser = require('xml2json');
 
-function giveAadhaarJSON(str) {
+module.exports.giveAadhaarJSON =  function (str) {
 	const jsonFromXML = parser.toJson(str, {
 		object: true,
 		coerce: true,

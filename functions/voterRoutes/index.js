@@ -5,6 +5,7 @@ const app = express.Router();
 
 const database = admin.database();
 const db = database.ref();
+const aadharFunctions = require('./../aadhaarSupport/index.js')
 
 
 app.route('/info')
@@ -13,6 +14,17 @@ app.route('/info')
 
 app.route('/otp')
 		.post(sendOtp);
+
+
+app.route('/aadhaar')
+		.post(getAadhaarDetails)
+
+
+function getAadhaarDetails(req, res) {
+	aadhaarXML = req.body.aadhaarXML
+	console.log(aadhaarXML)
+	console.log(aadharFunctions.giveAadhaarJSON(aadhaarXML))
+}
 
 
 function getInfo(req, res) {
