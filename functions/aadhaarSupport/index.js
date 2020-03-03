@@ -11,11 +11,11 @@ module.exports.giveAadhaarJSON =  function (str) {
 	const aadhaarJSON = {
 		name: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.name,
 		dob: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.dob,
-		picInJP2000: jsonFromXML.OfflinePaperlessKyc.UidData.Pht,
+		gender: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.gender,
+		address: address,
 		hasedEmail: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.e,
 		hashedMobileNo: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.m,
-		gender: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.gender,
-		address: address
+		picInJP2000: jsonFromXML.OfflinePaperlessKyc.UidData.Pht
 	}
 
 	return aadhaarJSON

@@ -22,8 +22,7 @@ app.route('/aadhaar')
 
 function getAadhaarDetails(req, res) {
 	aadhaarXML = req.body.aadhaarXML
-	console.log(aadhaarXML)
-	console.log(aadharFunctions.giveAadhaarJSON(aadhaarXML))
+	return res.send(aadharFunctions.giveAadhaarJSON(aadhaarXML))
 }
 
 

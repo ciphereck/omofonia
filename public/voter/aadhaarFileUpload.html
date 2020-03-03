@@ -8,7 +8,7 @@
 		<input type="file" id="aadhaarFile" accept=".xml" name="aadhaarFile">
 		<input type="submit">
 	</form>
-
+	<h4 id="data">No data</h4>
 	<script type="text/javascript" src="./../js/config.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
@@ -22,7 +22,7 @@
 			  	const req = axios.post("http://localhost:5001/omofonia-e5dac/us-central1/api" + "/voter/aadhaar", {
 			  		"aadhaarXML": textFromFileLoaded
 			  	}).then(token => {
-					console.log(token.data)
+			  		document.getElementById('data').innerText = JSON.stringify(token.data)
 					return token.data
 				})
 			};
