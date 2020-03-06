@@ -2,22 +2,18 @@ import React, {Component} from 'react';
 import { Text } from 'react-native';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin';
 import { thisExpression } from '@babel/types';
+import MobileOnboard from './component/userProfile/userProfile';
 
 export default class MainActivity extends Component {
-    state = {
-        isSigninInProgress: false,
-        userInfo: null
-    }
-
     constructor(props) {
         super(props);
+        this.state = {
+            userInfo: null
+        }
         GoogleSignin.configure({
             webClientId: '632226048159-3jerskhg1ip2auoi1ihkeabh65lkg9eo.apps.googleusercontent.com',
             offlineAccess: false,
         });
-    }
-    
-    async componentDidMount() {
         this._isSignedIn();
     }
 
@@ -57,9 +53,6 @@ export default class MainActivity extends Component {
       };
 
     _signIn = async () => {
-        this.setState({
-            isSigninInProgress: true
-        })
         try {
           await GoogleSignin.hasPlayServices();
           const userInfo = await GoogleSignin.signIn();
@@ -68,23 +61,18 @@ export default class MainActivity extends Component {
           if (error.code === statusCodes.SIGN_IN_CANCELLED) {
             console.log("SIGN IN Cancelled")
           } else if (error.code === statusCodes.IN_PROGRESS) {
-            console.lof("SIGN IN in progress")
+            console.log("SIGN IN in progress")
           } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
             console.log("SIGN IN Play Service is not available")
           } else {
             console.log("SIGN IN Error")
           }
         }
-        this.setState({
-            isSigninInProgress: false
-        })
       };
 
     render() {
         if(this.state.userInfo != null) {
-            return (
-                <Text>{this.state.userInfo.user.givenName}</Text>
-            )
+            return <MobileOnboard userInfo={this.state.userInfo} signOut={this.signOut} />
         } else {
             return (
                 <GoogleSigninButton
@@ -92,7 +80,6 @@ export default class MainActivity extends Component {
                     size={GoogleSigninButton.Size.Wide}
                     color={GoogleSigninButton.Color.Dark}
                     onPress={this._signIn}
-                    disabled={this.state.isSigninInProgress} 
                 />
             )
         }
