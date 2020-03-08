@@ -23,10 +23,13 @@ app.use('/developers', (req, res) => {
 const voterRoutes = require('./voterRoutes')
 const otpRoutes = require('./otpRoutes');
 const electionRoutes = require('./electionRoutes');
+const userRoutes = require('./userRoutes')
 
 app.use('/voter', voterRoutes);
 app.use('/otp', otpRoutes)
 app.use('/election', electionRoutes)
+app.post('/login', userRoutes.googleLogin)
+
 
 exports.api = functions.https.onRequest(app);
 
