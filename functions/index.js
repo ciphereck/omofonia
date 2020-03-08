@@ -25,6 +25,7 @@ const otpRoutes = require('./otpRoutes');
 const electionRoutes = require('./electionRoutes');
 const userRoutes = require('./userRoutes')
 
+app.use('/user', userRoutes.app)
 app.use('/voter', voterRoutes);
 app.use('/otp', otpRoutes)
 app.use('/election', electionRoutes)
