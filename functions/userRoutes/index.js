@@ -36,7 +36,10 @@ exports.googleLogin = function(req, response) {
 				jwttoken = snapshot.val();
 
 				const token = jwt.sign(jwttoken, "mudit");
-				data={token:token};
+				data = {
+					token: token,
+					userInfo: jwttoken
+				}
 				return response.status(200).json({
 					success: true, 
 					data:data
@@ -58,7 +61,10 @@ exports.googleLogin = function(req, response) {
 				};
 
 				const token = jwt.sign(jwttoken, "mudit");
-				data = { token: token };
+				data = {
+					token: token,
+					userInfo: jwttoken
+				}
 
 				return response.status(200).json({
 					success: true, data:data
