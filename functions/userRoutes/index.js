@@ -67,3 +67,69 @@ exports.googleLogin = function(req, response) {
         });
 	});
 }
+
+exports.isAuthenticated = function(req, res, next) {
+
+	const token = req.headers.authorization;
+  
+	if (token) {
+	  jwt.verify(token, "mudit", (err, data) => {
+		if (err) {
+  
+		  res.status(401).json({
+			success: false, err: 'unauthenticated request'
+		  });
+		}
+		else {
+		  let email = data.email;
+		  email = email.slice(0, -10)
+		  
+		  req.body.email = email;
+  
+		  return next();
+		}
+	  });
+	}
+	else {
+	  res.status(401).json({
+		success: false, err: 'unauthenticated request'
+	  });
+	}
+  };
+
+  exports.isAuthenticatedAdmin = function(req, res, next) {
+	const token = req.headers.authorization;
+  
+	if (token) {
+	  jwt.verify(token, "mudit", (err, data) => {
+		if (err) {
+  
+		  res.status(401).json({
+			success: false, err: 'unauthenticated request'
+		  });
+		}
+		else {
+			let adminStatus=data.admin;
+			if(adminStatus === true)
+				{
+					let email = data.email;
+					email = email.slice(0, -10)
+					
+					req.body.email = email;		
+					return next();  
+				}
+			else {
+				res.status(401).json({
+				success: false, err: 'you are not an admin, please request admin rights'
+				});
+			}
+  
+		}
+	  });
+	}
+	else {
+	  res.status(401).json({
+		success: false, err: 'unauthenticated request'
+	  });
+	}
+  };
