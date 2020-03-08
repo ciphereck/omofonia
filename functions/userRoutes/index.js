@@ -1,13 +1,68 @@
 const admin = require('firebase-admin');
 const express = require('express')
-const app = express.Router();
+app = express.Router();
 const database = admin.database();
 const db = database.ref();
 const googleUrl = 'https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=';
 const request = require('request');
 const jwt = require('jsonwebtoken');
+const unirest = require("unirest");
 
-exports.googleLogin = function(req, response) {
+app.route('/profile').post(isAuthenticated, getProfile);
+app.route('/otp').post(isAuthenticated, sendOtp);
+
+function sendOtp(req, res) {
+	mobileNo = req.body.mobileNo;
+	otp = req.body.otp;
+	const message = "Your otp is " + otp;
+	
+	return unirest
+				.post("https://www.fast2sms.com/dev/bulk")
+				.headers({
+					"authorization": "cF301XeZAe2eTxMzMjSz7I6lYblsgIdQUh8so2ZYQwrHsfSMYXVBukYuNtGr"
+				})
+				.form({
+					"sender_id": "FSTSMS",
+				    "message": message,
+				    "language": "english",
+				    "route": "p",
+				    "numbers": mobileNo,
+				})
+				.end(function(r) {
+					if(r.error) return res.send(r.error)
+					return res.send(r.body)
+				})
+}
+
+function getProfile(req, res) {
+	email = req.body.email
+	db
+		.child('users')
+		.child(email)
+		.once('value')
+		.then((snapshot) => {
+			if(snapshot.val() === null) {
+
+				return res.status(200).send({
+					success: false,
+					message: `${email} doesn't exist.`
+				});
+			}
+
+			return res.status(200).send({
+				"success": true,
+				"data": snapshot.val(),
+				"message": "Sent user data info successfully"
+			})
+		}).catch((err) => {
+			return res.status(200).send({
+				"success": false,
+				"message": "error in getting firebase" + err,
+			})
+		})
+}
+
+function googleLogin(req, response) {
 
 	request(googleUrl + req.body.idToken, {json: true}, (err, res, body) => {
 
@@ -74,7 +129,7 @@ exports.googleLogin = function(req, response) {
 	});
 }
 
-exports.isAuthenticated = function(req, res, next) {
+function isAuthenticated(req, res, next) {
 
 	const token = req.headers.authorization;
   
@@ -101,18 +156,18 @@ exports.isAuthenticated = function(req, res, next) {
 		success: false, err: 'unauthenticated request'
 	  });
 	}
-  };
+};
 
-  exports.isAuthenticatedAdmin = function(req, res, next) {
+function isAuthenticatedAdmin(req, res, next) {
 	const token = req.headers.authorization;
-  
+
 	if (token) {
-	  jwt.verify(token, "mudit", (err, data) => {
+		jwt.verify(token, "mudit", (err, data) => {
 		if (err) {
-  
-		  res.status(401).json({
+
+			res.status(401).json({
 			success: false, err: 'unauthenticated request'
-		  });
+			});
 		}
 		else {
 			let adminStatus=data.admin;
@@ -129,13 +184,15 @@ exports.isAuthenticated = function(req, res, next) {
 				success: false, err: 'you are not an admin, please request admin rights'
 				});
 			}
-  
+
 		}
-	  });
+		});
 	}
 	else {
-	  res.status(401).json({
+		res.status(401).json({
 		success: false, err: 'unauthenticated request'
-	  });
+		});
 	}
-  };
+};
+
+module.exports = {app, googleLogin}
