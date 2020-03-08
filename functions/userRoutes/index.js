@@ -10,6 +10,27 @@ const unirest = require("unirest");
 
 app.route('/profile').post(isAuthenticated, getProfile);
 app.route('/otp').post(isAuthenticated, sendOtp);
+app.route('/mobile').put(isAuthenticated, updateMobile);
+
+function updateMobile(req, res) {
+	mobileNo = req.body.mobileNo;
+	email = req.body.email
+	db
+		.child('users')
+		.child(email)
+		.update({mobileNo: mobileNo})
+		.then((snapshot) => {
+			return res.send({
+				"success": true,
+				"message": "Mobile No updated successfully"
+			})
+		}).catch((err) => {
+			return res.send({
+				"success": false,
+				"message": "error occured" + err
+			})
+		})
+}
 
 function sendOtp(req, res) {
 	mobileNo = req.body.mobileNo;
