@@ -7,6 +7,10 @@ class VoteChain {
         console.log("Vote Chain Instanitated")
     }
 
+    getVoteChain() {
+        return this.voteChain
+    }
+
     addnewBlockChain() {
         const chain = new blockchain.Blockchain()
         const index = this.voteChain.length
@@ -23,7 +27,7 @@ class VoteChain {
         const max = 100
         const voteData = new vote.Vote(Math.floor(Math.random() * max), Math.floor(Math.random() * max), Math.floor(Math.random() * max))
         const newBlock = this.voteChain[index].generateNextBlock(voteData)
-        this.voteChain[index].addBlock(newBlock)
+        return this.voteChain[index].addBlock(newBlock)
     }
 
     getSpecificBlockChain(index) {
@@ -51,21 +55,29 @@ class VoteChain {
                 voteCount.set(candidateId, 1)
             }
         }
-        return voteCount
+        const jsonVoteCount = []
+        voteCount.forEach( (value, key) => {
+            jsonVoteCount.push({
+                "candidateId": key,
+                "voteCount": value
+            })
+        })
+        console.log(jsonVoteCount)
+        return jsonVoteCount
     }
 }
 
-voteChain = new VoteChain()
-voteChain.addnewBlockChain()
-voteChain.addVote(0)
-voteChain.addnewBlockChain()
-voteChain.addVote(0)
-voteChain.addVote(0)
-voteChain.addVote(1)
-console.log(voteChain.getSpecificBlockChain(0))
-console.log(voteChain.getSpecificBlockChain(1))
-console.log(voteChain.voteChain)
-console.log(voteChain.countVotes(0))
+// voteChain = new VoteChain()
+// voteChain.addnewBlockChain()
+// voteChain.addVote(0)
+// voteChain.addnewBlockChain()
+// voteChain.addVote(0)
+// voteChain.addVote(0)
+// voteChain.addVote(1)
+// console.log(voteChain.getSpecificBlockChain(0))
+// console.log(voteChain.getSpecificBlockChain(1))
+// console.log(voteChain.voteChain)
+// console.log(voteChain.countVotes(0))
 
 module.exports = {
 	VoteChain: VoteChain

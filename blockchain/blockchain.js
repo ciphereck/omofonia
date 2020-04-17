@@ -30,7 +30,9 @@ class Blockchain {
     addBlock(newBlock) {
         if (this.isValidNewBlock(this.getLatestBlock(), newBlock)) {
             this.blockChain.push(newBlock)
+            return true
         }
+        return false
     }
 
     isValidNewBlock(previousBlock, newBlock) {
