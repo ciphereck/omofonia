@@ -4,12 +4,12 @@ const vote = require('./voteClass')
 
 class Blockchain {
     constructor() {
-        this.blockChain = [this.getGenesisBlock()]
+        this.blockChain = [this.getInitialBlock()]
     }
 
-    getGenesisBlock() {
+    getInitialBlock() {
         const timestamp = new Date().getTime() / 1000;
-        return new block.Block(0, "0000", timestamp, "Start From ID 1")
+        return new block.Block(0, "0000", 1587148020.703, "Start From ID 1")
     }
 
     getBlockchain() {
@@ -49,11 +49,38 @@ class Blockchain {
         }
         return true;
     }
+
+    isValidBlockChain(){
+        if (this.blockChain[0].toString() != this.getInitialBlock().toString()) {
+            return false;
+		}
+		var tempBlocks = [this.blockChain[0]];
+		for (var i = 1; i < this.blockChain.length; i++) {
+			if (this.isValidNewBlock(tempBlocks[i - 1], this.blockChain[i])) {
+				tempBlocks.push(this.blockChain[i]);
+			} else {
+				return false;
+			}
+		}
+		return true;
+    };
+    
+    replaceBlockChain(newBlockChain) {
+        if (this.isValidBlockChain(newBlockChain) && newBlockChain.length > this.blockChain.length) {
+            console.log('Received blockchain is valid. Replacing current blockchain with received blockchain');
+            this.blockchain = newBlockChain;
+            return true;
+        }else {
+            console.log('Received blockchain invalid');
+            return false;
+        }
+    }
 }
 
 abc = new Blockchain()
 abc.addBlock(abc.generateNextBlock("hi"))
 abc.addBlock(abc.generateNextBlock("hi"))
 console.log(abc.getBlockchain())
+console.log(abc.isValidBlockChain())
 
 module.exports.BlockChain
