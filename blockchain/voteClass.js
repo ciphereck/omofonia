@@ -1,6 +1,8 @@
 class Vote {
-	constructor(something) {
-		this.candidateId = something
+	constructor(candidateId, voterId, electionId) {
+		this.candidateId = candidateId
+		this.voterId = voterId
+		this.electionId = electionId
 	}
 }
 

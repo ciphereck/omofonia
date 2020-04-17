@@ -1,6 +1,5 @@
 const CryptoJS = require("crypto-js");
 const block = require('./block');
-const vote = require('./voteClass')
 
 class Blockchain {
     constructor() {
@@ -25,8 +24,7 @@ class Blockchain {
         const previousHash = previousBlock.hash
         const index = previousBlock.index + 1
         const timestamp = new Date().getTime() / 1000
-        const voteDataClassObject = new vote.Vote(voteData)
-        return new block.Block(index, previousHash, timestamp, voteDataClassObject)
+        return new block.Block(index, previousHash, timestamp, voteData)
     }
 
     addBlock(newBlock) {
@@ -77,10 +75,12 @@ class Blockchain {
     }
 }
 
-abc = new Blockchain()
-abc.addBlock(abc.generateNextBlock("hi"))
-abc.addBlock(abc.generateNextBlock("hi"))
-console.log(abc.getBlockchain())
-console.log(abc.isValidBlockChain())
+// abc = new Blockchain()
+// abc.addBlock(abc.generateNextBlock("hi"))
+// abc.addBlock(abc.generateNextBlock("hi"))
+// console.log(abc.getBlockchain())
+// console.log(abc.isValidBlockChain())
 
-module.exports.BlockChain
+module.exports = {
+	Blockchain: Blockchain
+}
