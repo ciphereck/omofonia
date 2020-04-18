@@ -14,6 +14,8 @@ const initRoutes = () => {
     app.get('/blocks/:id', (req, res) => res.send(votechain.getSpecificBlockChain(req.params.id)))
     app.post('/vote/:id', (req, res) => res.send(votechain.addVote(req.params.id)))
     app.get('/voteCount/:id', (req, res) => res.send(votechain.countVotes(req.params.id)))
+    app.get('/', (req, res) => res.send("BlockChain Running here......."))
+    app.get('*', (req, res) => res.send("Route Not Found. Please request proper routes"))
 }
 
 initRoutes()
