@@ -24,7 +24,7 @@ class VoteChain {
             return null
         }
 
-        const max = 100
+        const max = 5
         const voteData = new vote.Vote(Math.floor(Math.random() * max), Math.floor(Math.random() * max), Math.floor(Math.random() * max))
         const newBlock = this.voteChain[index].generateNextBlock(voteData)
         return this.voteChain[index].addBlock(newBlock)
@@ -50,7 +50,7 @@ class VoteChain {
         for(var i=1; i<blockchain.length; i++) {
             const candidateId = blockchain[i].voteData.candidateId
             if(voteCount.has(candidateId) == true) {
-                voteCount.set(candidateId, voteCount.get(candidateId))
+                voteCount.set(candidateId, voteCount.get(candidateId)+1)
             }else {
                 voteCount.set(candidateId, 1)
             }
