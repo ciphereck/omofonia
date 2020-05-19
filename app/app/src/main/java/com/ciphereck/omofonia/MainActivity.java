@@ -17,6 +17,18 @@ import com.google.android.gms.tasks.Task;
 public class MainActivity extends AppCompatActivity {
     GoogleSignInClient mGoogleSignInClient;
     SignInButton signInButton;
+    GoogleSignInAccount googleSignInAccount;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        googleSignInAccount = GoogleSignIn.getLastSignedInAccount(this);
+        if(googleSignInAccount == null) {
+            return;
+        }
+        System.out.println(googleSignInAccount.getDisplayName());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            googleSignInAccount = account;
             System.out.println(account.getDisplayName());
             // Signed in successfully, show authenticated UI.
 //            updateUI(account);
