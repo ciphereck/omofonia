@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "632226048159",
+    "firebase_url": "https://omofonia-e5dac.firebaseio.com",
+    "project_id": "omofonia-e5dac",
+    "storage_bucket": "omofonia-e5dac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632226048159:android:6f892bcd8b4dc565789aaa",
+        "android_client_info": {
+          "package_name": "com.ciphereck.omofonia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632226048159-tpunt3rh6hidb00ijubnsau1mp0192h1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ciphereck.omofonia",
+            "certificate_hash": "28b97485099a36010ad39cda82684abb44c2b07b"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzJdnZ2LVdevCKOvLG_GBoaw3FnlEJItU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632226048159-skn45qhvfm87pco2q44q7n0rqsad7c4l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
