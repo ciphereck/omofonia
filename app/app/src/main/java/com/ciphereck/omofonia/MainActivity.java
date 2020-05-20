@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.ciphereck.omofonia.activity.OnBoardingActivity;
+import com.ciphereck.omofonia.managers.UserManager;
 import com.ciphereck.omofonia.model.IdToken;
 import com.ciphereck.omofonia.retrofit.RetrofitInstance;
 import com.ciphereck.omofonia.retrofit.helper.UserRoutesHelper;
@@ -82,7 +84,9 @@ public class MainActivity extends AppCompatActivity {
     private void initUser(String idToken) {
         UserRoutesHelper
                 .userLogin(idToken)
-                .subscribe((jsonElement -> System.out.println(jsonElement.getUserInfo().getEmail())),
-                        err -> System.out.println(err));
+                .subscribe(user -> {
+                    UserManager.setInstance(user);
+                    startActivity(new Intent(this, OnBoardingActivity.class));
+                }, err -> System.out.println(err));
     }
 }
