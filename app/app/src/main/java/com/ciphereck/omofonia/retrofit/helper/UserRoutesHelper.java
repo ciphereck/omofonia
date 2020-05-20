@@ -24,15 +24,9 @@ public class UserRoutesHelper {
                 .userLogin(new IdToken(idToken))
                 .filter((jsonElement -> jsonElement.getAsJsonObject().get("success").getAsBoolean()==true))
                 .map((jsonElement -> jsonElement.getAsJsonObject().get("data")))
-                .map(jsonElement -> getUser(jsonElement))
+                .map(jsonElement -> (User) (new Gson()).fromJson(jsonElement, new TypeToken<User>(){}.getType()))
                 .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread());
-    }
-
-    public static User getUser(JsonElement jsonElement) {
-        Gson gson = new Gson();
-        Type type = new TypeToken<User>(){}.getType();
-        return gson.fromJson(jsonElement, type);
     }
 
 }
