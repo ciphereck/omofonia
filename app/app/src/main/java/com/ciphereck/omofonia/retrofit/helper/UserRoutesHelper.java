@@ -23,7 +23,7 @@ public class UserRoutesHelper {
                 .create(UserRoutes.class)
                 .userLogin(new IdToken(idToken))
                 .subscribeOn(Schedulers.computation())
-                .filter((jsonElement -> jsonElement.getAsJsonObject().get("success").getAsBoolean()==true))
+                .filter((jsonElement -> jsonElement.getAsJsonObject().get("success").getAsBoolean()))
                 .map((jsonElement -> jsonElement.getAsJsonObject().get("data")))
                 .map(jsonElement -> (User) (new Gson()).fromJson(jsonElement, new TypeToken<User>(){}.getType()))
                 .observeOn(AndroidSchedulers.mainThread());
