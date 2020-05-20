@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         if(googleSignInAccount == null) {
             return;
         }
-        System.out.println(googleSignInAccount.getDisplayName());
+        System.out.println(googleSignInAccount.getIdToken());
+        System.out.println(googleSignInAccount.getId());
     }
 
     @Override
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("632226048159-jf79itn3u5q9fe5tehsv7ob9fe70al2d.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
 
@@ -76,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             googleSignInAccount = account;
-            System.out.println(account.getDisplayName());
+            System.out.println(account.getIdToken());
+            System.out.println(googleSignInAccount.getId());
             // Signed in successfully, show authenticated UI.
 //            updateUI(account);
         } catch (ApiException e) {
