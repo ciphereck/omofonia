@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.ciphereck.omofonia.model.IdToken;
+import com.ciphereck.omofonia.retrofit.RetrofitInstance;
+import com.ciphereck.omofonia.retrofit.helper.UserRoutesHelper;
+import com.ciphereck.omofonia.retrofit.routes.UserRoutes;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -14,21 +18,22 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.schedulers.Schedulers;
+
 public class MainActivity extends AppCompatActivity {
-    GoogleSignInClient mGoogleSignInClient;
     SignInButton signInButton;
-    GoogleSignInAccount googleSignInAccount;
+    int RC_SIGN_IN = 1;
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        googleSignInAccount = GoogleSignIn.getLastSignedInAccount(this);
-        if(googleSignInAccount == null) {
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if(account == null) {
             return;
         }
-        System.out.println(googleSignInAccount.getIdToken());
-        System.out.println(googleSignInAccount.getId());
+        initUser(account.getIdToken());
     }
 
     @Override
@@ -36,12 +41,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initGoogleLogin();
+    }
+
+    private void initGoogleLogin() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken("632226048159-jf79itn3u5q9fe5tehsv7ob9fe70al2d.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
@@ -50,43 +59,33 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.sign_in_button:
-                        signIn();
+                        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+                        startActivityForResult(signInIntent, RC_SIGN_IN);
                         break;
                 }
             }
         });
     }
 
-    private void signIn() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, 1);
-    }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
+        if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
+            try {
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                initUser(account.getIdToken());
+            } catch (ApiException e) {
+                System.out.println("signInResult:failed code=" + e.getStatusCode());
+            }
         }
     }
 
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            googleSignInAccount = account;
-            System.out.println(account.getIdToken());
-            System.out.println(googleSignInAccount.getId());
-            // Signed in successfully, show authenticated UI.
-//            updateUI(account);
-        } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            System.out.println("signInResult:failed code=" + e.getStatusCode());
-//            updateUI(null);
-        }
+    private void initUser(String idToken) {
+        UserRoutesHelper
+                .userLogin(idToken)
+                .subscribe((jsonElement -> System.out.println(jsonElement.getUserInfo().getEmail())),
+                        err -> System.out.println(err));
     }
 }
