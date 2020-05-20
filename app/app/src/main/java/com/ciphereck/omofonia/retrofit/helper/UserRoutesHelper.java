@@ -22,10 +22,10 @@ public class UserRoutesHelper {
                 .getInstance()
                 .create(UserRoutes.class)
                 .userLogin(new IdToken(idToken))
+                .subscribeOn(Schedulers.computation())
                 .filter((jsonElement -> jsonElement.getAsJsonObject().get("success").getAsBoolean()==true))
                 .map((jsonElement -> jsonElement.getAsJsonObject().get("data")))
                 .map(jsonElement -> (User) (new Gson()).fromJson(jsonElement, new TypeToken<User>(){}.getType()))
-                .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
