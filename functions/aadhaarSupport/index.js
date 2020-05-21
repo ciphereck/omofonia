@@ -1,6 +1,6 @@
 const parser = require('xml2json');
 
-module.exports.giveAadhaarJSON =  function (str) {
+module.exports.giveAadhaarJSON =  function (str, json) {
 	const jsonFromXML = parser.toJson(str, {
 		object: true,
 		coerce: true,
@@ -8,17 +8,15 @@ module.exports.giveAadhaarJSON =  function (str) {
 
 	const address = getAddress(jsonFromXML.OfflinePaperlessKyc.UidData.Poa)
 
-	const aadhaarJSON = {
-		name: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.name,
-		dob: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.dob,
-		gender: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.gender,
-		address: address,
-		hasedEmail: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.e,
-		hashedMobileNo: jsonFromXML.OfflinePaperlessKyc.UidData.Poi.m,
-		picInJP2000: jsonFromXML.OfflinePaperlessKyc.UidData.Pht
-	}
+	json.aadhaarName =  jsonFromXML.OfflinePaperlessKyc.UidData.Poi.name,
+	json.dob = jsonFromXML.OfflinePaperlessKyc.UidData.Poi.dob,
+	json.gender = jsonFromXML.OfflinePaperlessKyc.UidData.Poi.gender,
+	json.address = address,
+	json.hasedEmail =  jsonFromXML.OfflinePaperlessKyc.UidData.Poi.e,
+	json.hashedMobileNo =  jsonFromXML.OfflinePaperlessKyc.UidData.Poi.m,
+	json.picInJP2000 = jsonFromXML.OfflinePaperlessKyc.UidData.Pht
 
-	return aadhaarJSON
+	return json
 }
 
 function getAddress(json) {

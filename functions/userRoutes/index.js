@@ -7,24 +7,31 @@ const googleUrl = 'https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=';
 const request = require('request');
 const jwt = require('jsonwebtoken');
 const unirest = require("unirest");
+const userRoutes = require("./userRoutes")
 
 app.route('/profile').post(isAuthenticated, getProfile);
 app.route('/otp').post(isAuthenticated, sendOtp);
 app.route('/mobile').put(isAuthenticated, updateMobile);
+app.use('/', userRoutes)
 
 function updateMobile(req, res) {
 	mobileNo = req.body.mobileNo;
 	email = req.body.email
+	console.log(req.body)
+	json = req.body.data
+	json.mobileNo = mobileNo
 	db
 		.child('users')
 		.child(email)
-		.update({mobileNo: mobileNo})
+		.set(json)
 		.then((snapshot) => {
+			console.log("success in updating mobile")
 			return res.send({
 				"success": true,
 				"message": "Mobile No updated successfully"
 			})
 		}).catch((err) => {
+			console.log("error aa gayi" + err)
 			return res.send({
 				"success": false,
 				"message": "error occured" + err
@@ -33,6 +40,7 @@ function updateMobile(req, res) {
 }
 
 function sendOtp(req, res) {
+	console.log(req.body)
 	mobileNo = req.body.mobileNo;
 	otp = req.body.otp;
 	const message = "Your otp is " + otp;
@@ -50,8 +58,16 @@ function sendOtp(req, res) {
 				    "numbers": mobileNo,
 				})
 				.end(function(r) {
-					if(r.error) return res.send(r.error)
-					return res.send(r.body)
+					console.log("err" + r.error)
+					if(r.error) return res.send({
+						success: false,
+						message: r.error
+					})
+					console.log("success in sending otp")
+					return res.send({
+						success: true,
+						message: r.body
+					})
 				})
 }
 
@@ -167,6 +183,7 @@ function isAuthenticated(req, res, next) {
 		  email = email.slice(0, -10)
 		  
 		  req.body.email = email;
+		  req.body.data = data;
   
 		  return next();
 		}
