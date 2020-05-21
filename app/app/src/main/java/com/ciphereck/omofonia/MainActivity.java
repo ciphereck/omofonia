@@ -1,17 +1,13 @@
 package com.ciphereck.omofonia;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.ciphereck.omofonia.activity.OnBoardingActivity;
 import com.ciphereck.omofonia.managers.UserManager;
-import com.ciphereck.omofonia.model.IdToken;
-import com.ciphereck.omofonia.retrofit.RetrofitInstance;
 import com.ciphereck.omofonia.retrofit.helper.UserRoutesHelper;
-import com.ciphereck.omofonia.retrofit.routes.UserRoutes;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -19,9 +15,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
-
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
     SignInButton signInButton;
@@ -85,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
         UserRoutesHelper
                 .userLogin(idToken)
                 .subscribe(user -> {
+                    System.out.println("token");
+                    System.out.println(user.getToken());
+                    System.out.println("token");
                     UserManager.setInstance(user);
                     startActivity(new Intent(this, OnBoardingActivity.class));
                 }, err -> System.out.println(err));
