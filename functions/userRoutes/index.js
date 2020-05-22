@@ -11,19 +11,20 @@ const userRoutes = require("./userRoutes")
 
 app.route('/profile').post(isAuthenticated, getProfile);
 app.route('/otp').post(isAuthenticated, sendOtp);
-app.route('/mobile').put(updateMobile);
+app.route('/mobile').put(isAuthenticated ,updateMobile);
 app.use('/', userRoutes)
 
 function updateMobile(req, res) {
 	console.log("Hi")
-	mobileNo = req.body.mobileNo;
+	mobileNo = req.body.mobileNumber;
 	email = req.body.email
 	console.log(req.body)
 	json = req.body.data
 	db
 		.child('users')
 		.child(email)
-		.update({"mobileNo": mobileNo})
+		.child("mobileNumber")
+		.set(mobileNo)
 		.then(() => {
 			console.log("success in updating mobile")
 			return res.send({

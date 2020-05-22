@@ -20,16 +20,26 @@ function addAadhaar(req, res) {
     jsonAadhar.password = req.body.password
     jsonAadhar.aadhaarNumber = req.body.aadhaarNumber
     console.log(jsonAadhar)
-    
-    db
+    x = db
         .child("users")
         .child(req.body.email)
-        .set(jsonAadhar)
-        .then((snapshot) => {
-            return res.send({
-                "success": true,
-                "message": "updated data successfully",
-            })
+        
+	x.set(jsonAadhar)
+	.then((snapshot) => {
+//		console.lof(snapshot.val())
+	    x
+		.once("value")
+	 	.then((snapshot) => {
+            		return res.send({
+                		"success": true,
+               	 		"message": "updated data successfully",
+				"data": snapshot.val()
+            	}).catch((err) => {
+			return res.send({
+				"success": false,
+				"messsage": err
+			})
+		})
         })
         .catch((err) => {
             return res.send({
@@ -37,6 +47,7 @@ function addAadhaar(req, res) {
                 message: err
             })
         })
+   })
 }
 
 
