@@ -174,7 +174,7 @@ function isAuthenticated(req, res, next) {
 	  jwt.verify(token, "mudit", (err, data) => {
 		if (err) {
   
-		  res.status(401).json({
+		  return res.status(401).json({
 			success: false, err: 'unauthenticated request'
 		  });
 		}
@@ -190,7 +190,7 @@ function isAuthenticated(req, res, next) {
 	  });
 	}
 	else {
-	  res.status(401).json({
+	  return res.status(401).json({
 		success: false, err: 'unauthenticated request'
 	  });
 	}
@@ -203,8 +203,8 @@ function isAuthenticatedAdmin(req, res, next) {
 		jwt.verify(token, "mudit", (err, data) => {
 		if (err) {
 
-			res.status(401).json({
-			success: false, err: 'unauthenticated request'
+			return res.status(401).json({
+				success: false, err: 'unauthenticated request'
 			});
 		}
 		else {
@@ -218,8 +218,8 @@ function isAuthenticatedAdmin(req, res, next) {
 					return next();  
 				}
 			else {
-				res.status(401).json({
-				success: false, err: 'you are not an admin, please request admin rights'
+				return res.status(401).json({
+					success: false, err: 'you are not an admin, please request admin rights'
 				});
 			}
 
@@ -227,8 +227,8 @@ function isAuthenticatedAdmin(req, res, next) {
 		});
 	}
 	else {
-		res.status(401).json({
-		success: false, err: 'unauthenticated request'
+		return res.status(401).json({
+			success: false, err: 'unauthenticated request'
 		});
 	}
 };

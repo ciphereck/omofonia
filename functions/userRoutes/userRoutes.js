@@ -25,14 +25,18 @@ function addAadhaar(req, res) {
         .child("users")
         .child(req.body.email)
         .set(jsonAadhar)
-        .then((snapshot) => res.send({
-            "success": true,
-            "message": "updated data successfully",
-        }))
-        .catch((err) => res.send({
-            success: false,
-            message: err
-        }))
+        .then((snapshot) => {
+            return res.send({
+                "success": true,
+                "message": "updated data successfully",
+            })
+        })
+        .catch((err) => {
+            return res.send({
+                success: false,
+                message: err
+            })
+        })
 }
 
 
@@ -43,25 +47,25 @@ function isAuthenticated(req, res, next) {
 	  jwt.verify(token, "mudit", (err, data) => {
         if (err) {
   
-		  res.status(401).json({
-			success: false, err: 'unauthenticated request'
-		  });
+        return res.status(401).json({
+            success: false, err: 'unauthenticated request'
+        });
 		}
 		else {
           let email = data.email;
-		  email = email.slice(0, -10)
+		      email = email.slice(0, -10)
 		  
           req.body.email = email;
           req.body.data = data;
   
-		  return next();
+		      return next();
 		}
 	  });
 	}
 	else {
-	  res.status(401).json({
-		success: false, err: 'unauthenticated request'
-	  });
+        return res.status(401).json({
+          success: false, err: 'unauthenticated request'
+        });
 	}
 };
 
