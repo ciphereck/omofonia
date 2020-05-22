@@ -15,16 +15,16 @@ app.route('/mobile').put(updateMobile);
 app.use('/', userRoutes)
 
 function updateMobile(req, res) {
+	console.log("Hi")
 	mobileNo = req.body.mobileNo;
 	email = req.body.email
 	console.log(req.body)
 	json = req.body.data
-	json.mobileNo = mobileNo
 	db
 		.child('users')
 		.child(email)
 		.update({"mobileNo": mobileNo})
-		.then((snapshot) => {
+		.then(() => {
 			console.log("success in updating mobile")
 			return res.send({
 				"success": true,
