@@ -3,9 +3,15 @@ const functions = require('firebase-functions');
 const express = require('express');
 const cors = require('cors');
 
-admin.initializeApp();
+var serviceAccount = require('./omofonia-e5dac-firebase-adminsdk-gbl5r-cc36c8f3a7.json')
+
+admin.initializeApp({
+	credential: admin.credential.cert(serviceAccount),
+  	databaseURL: "https://omofonia-e5dac.firebaseio.com"
+});
 
 const app = express();
+const http_port = process.env.HTTP_PORT || 3010;
 
 app.use(cors({ origin: true }));
 
@@ -31,8 +37,9 @@ app.use('/otp', otpRoutes)
 app.use('/election', electionRoutes)
 app.post('/login', userRoutes.googleLogin)
 
+// exports.api = functions.https.onRequest(app);
 
-exports.api = functions.https.onRequest(app);
+app.listen(http_port, () => console.log("Http Routes Listening on port: ", http_port))
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
