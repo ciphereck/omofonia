@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "omofonia-e5dac"
+    "default": "omofonia-e5dac",
+    "try": "omofonia-try1"
   }
 }
