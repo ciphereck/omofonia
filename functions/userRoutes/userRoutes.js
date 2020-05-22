@@ -41,7 +41,7 @@ function addAadhaar(req, res) {
 
 
 function isAuthenticated(req, res, next) {
-    const token = req.headers.authorization;
+    const token = req.body.authHeader;
   
 	if (token) {
 	  jwt.verify(token, "mudit", (err, data) => {

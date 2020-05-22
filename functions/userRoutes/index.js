@@ -11,7 +11,7 @@ const userRoutes = require("./userRoutes")
 
 app.route('/profile').post(isAuthenticated, getProfile);
 app.route('/otp').post(isAuthenticated, sendOtp);
-app.route('/mobile').put(isAuthenticated, updateMobile);
+app.route('/mobile').put(updateMobile);
 app.use('/', userRoutes)
 
 function updateMobile(req, res) {
@@ -23,7 +23,7 @@ function updateMobile(req, res) {
 	db
 		.child('users')
 		.child(email)
-		.set(json)
+		.update({"mobileNo": mobileNo})
 		.then((snapshot) => {
 			console.log("success in updating mobile")
 			return res.send({
@@ -100,7 +100,6 @@ function getProfile(req, res) {
 }
 
 function googleLogin(req, response) {
-
 	request(googleUrl + req.body.idToken, {json: true}, (err, res, body) => {
 
 		let data;
@@ -168,7 +167,7 @@ function googleLogin(req, response) {
 
 function isAuthenticated(req, res, next) {
 
-	const token = req.headers.authorization;
+	const token = req.body.authHeader;
   
 	if (token) {
 	  jwt.verify(token, "mudit", (err, data) => {
@@ -197,7 +196,7 @@ function isAuthenticated(req, res, next) {
 };
 
 function isAuthenticatedAdmin(req, res, next) {
-	const token = req.headers.authorization;
+	const token = req.body.authHeader;
 
 	if (token) {
 		jwt.verify(token, "mudit", (err, data) => {
