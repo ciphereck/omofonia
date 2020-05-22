@@ -2,6 +2,8 @@ const admin = require('firebase-admin');
 const functions = require('firebase-functions');
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser')
+
 
 var serviceAccount = require('./omofonia-e5dac-firebase-adminsdk-gbl5r-cc36c8f3a7.json')
 
@@ -11,7 +13,10 @@ admin.initializeApp({
 });
 
 const app = express();
-const http_port = process.env.HTTP_PORT || 3010;
+const http_port = process.env.HTTP_PORT || 3010
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 app.use(cors({ origin: true }));
 
