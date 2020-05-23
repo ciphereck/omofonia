@@ -109,7 +109,14 @@ public class OnBoardingActivity extends AppCompatActivity {
 
     private void initAadhaarDataButtonListener() {
         aadhaarDataSubmitButton.setOnClickListener(v -> {
-            AadhaarRequestModel aadhaarRequestModel = new AadhaarRequestModel(aadhaarXml.getText().toString(),
+            String aadhaarXMLString = aadhaarXml.getText().toString();
+            String aadhaarData = "";
+            for(int i=0; i<aadhaarXMLString.length(); i++) {
+                if(((int)(aadhaarXMLString.charAt(i))) != 10) {
+                    aadhaarData+= aadhaarXMLString.charAt(i);
+                }
+            }
+            AadhaarRequestModel aadhaarRequestModel = new AadhaarRequestModel(aadhaarData,
                     filePassword.getText().toString(), aadhaarNumber.getText().toString(),
                     UserManager.getInstance().getToken());
 
