@@ -16,6 +16,8 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+
 public class MainActivity extends AppCompatActivity {
     SignInButton signInButton;
     int RC_SIGN_IN = 1;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         if(account == null) {
             return;
         }
+        System.out.println(account.getIdToken());
         initUser(account.getIdToken());
     }
 
@@ -81,8 +84,14 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("token");
                     System.out.println(user.getToken());
                     System.out.println("token");
-                    UserManager.setInstance(user);
-                    startActivity(new Intent(this, OnBoardingActivity.class));
+                    UserManager
+                            .setInstance(user)
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(irr -> {
+                                System.out.println(irr);
+                                startActivity(new Intent(this, OnBoardingActivity.class));
+                            }, err -> System.out.println(err));
+
                 }, err -> System.out.println(err));
     }
 }
