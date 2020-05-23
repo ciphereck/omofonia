@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ciphereck.omofonia.R;
 import com.ciphereck.omofonia.managers.UserManager;
+import com.ciphereck.omofonia.model.User;
 import com.ciphereck.omofonia.model.request.AadhaarRequestModel;
 import com.ciphereck.omofonia.model.request.OtpRequestModel;
 import com.ciphereck.omofonia.retrofit.helper.UserRoutesHelper;
@@ -28,17 +29,17 @@ public class OnBoardingActivity extends AppCompatActivity {
     Button updateMobileNumberButton;
     Button sendOtpButton;
     String otpNumber = "9999";
+    User user;
 
     @Override
     protected void onStart() {
         super.onStart();
-
-        if(UserManager.getInstance().getUserInfo().getAadhaarName() != null) {
+        if (user.getUserInfo().getAadhaarName() != null) {
             aadhadDataSetEnable(false);
         } else {
             mobileFieldSetEnable(false);
         }
-        if(UserManager.getInstance().getUserInfo().getMobileNumber() != null) {
+        if (user.getUserInfo().getMobileNumber() != null) {
             startActivity(new Intent(this, ElectionActivity.class));
         }
     }
@@ -47,12 +48,12 @@ public class OnBoardingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding);
+        user = UserManager.getInstance();
 
         initView();
     }
 
     private void initView() {
-        System.out.println(UserManager.getInstance().getToken());
         aadhaarDataSubmitButton = findViewById(R.id.aadhaarSubmit);
         updateMobileNumberButton = findViewById(R.id.button2);
         sendOtpButton = findViewById(R.id.button3);
@@ -79,10 +80,10 @@ public class OnBoardingActivity extends AppCompatActivity {
                 return;
             }
             UserRoutesHelper
-                    .updateMobileNumber(new OtpRequestModel(mobileNumber.getText().toString(), "random", UserManager.getInstance().getToken()))
+                    .updateMobileNumber(new OtpRequestModel(mobileNumber.getText().toString(), "random", user.getToken()))
                     .subscribe(responseModel -> {
                         if(responseModel.getAsJsonObject().get("success").getAsBoolean()) {
-                            UserManager.getInstance().getUserInfo().setMobileNumber(mobileNumber.getText().toString());
+                            user.getUserInfo().setMobileNumber(mobileNumber.getText().toString());
                             startActivity(new Intent(this, ElectionActivity.class));
                         }
                         showToast(responseModel.toString());
@@ -96,7 +97,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         Integer finalNumberToGuess = numberToGuess;
         sendOtpButton.setOnClickListener(v -> {
             UserRoutesHelper
-                    .sendOtp(new OtpRequestModel(mobileNumber.getText().toString(), finalNumberToGuess.toString(), UserManager.getInstance().getToken()))
+                    .sendOtp(new OtpRequestModel(mobileNumber.getText().toString(), finalNumberToGuess.toString(), user.getToken()))
                     .subscribe(responseModel -> {
                         showToast(responseModel.toString());
                         this.onStart();
@@ -118,14 +119,14 @@ public class OnBoardingActivity extends AppCompatActivity {
             }
             AadhaarRequestModel aadhaarRequestModel = new AadhaarRequestModel(aadhaarData,
                     filePassword.getText().toString(), aadhaarNumber.getText().toString(),
-                    UserManager.getInstance().getToken());
+                    user.getToken());
 
             UserRoutesHelper
                     .updateAadhaarDetails(aadhaarRequestModel)
                     .subscribe(userInfo -> {
                         System.out.println("aaya yhape");
                         showToast("aaya yhape");
-                        UserManager.getInstance().setUserInfo(userInfo);
+                        user.setUserInfo(userInfo);
                         aadhadDataSetEnable(false);
                         mobileFieldSetEnable(true);
                     }, err -> System.out.println(err));
