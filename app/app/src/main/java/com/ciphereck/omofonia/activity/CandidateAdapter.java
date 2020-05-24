@@ -9,18 +9,22 @@ import android.widget.TextView;
 
 import com.ciphereck.omofonia.R;
 import com.ciphereck.omofonia.model.election.Candidate;
-import com.ciphereck.omofonia.model.election.Election;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CandidateAdapter extends ArrayAdapter<Candidate> {
     private List<Candidate> candidateList;
     Context context;
+    private Integer selectedCandidate = -1;
+    List<View> views;
 
     public CandidateAdapter(List<Candidate> candidateList, Context context) {
         super(context, R.layout.candidate);
         this.context = context;
         this.candidateList = candidateList;
+        views = new ArrayList<>();
+        selectedCandidate = candidateList.size();
     }
 
     @Override
@@ -40,6 +44,17 @@ public class CandidateAdapter extends ArrayAdapter<Candidate> {
         candidateName.setText(candidate.getName());
         partyName.setText(candidate.getParty().getName());
 
+        view.setOnClickListener(v -> {
+            selectedCandidate = position;
+            System.out.println(position);
+        });
+
+        views.add(view);
+
         return view;
+    }
+
+    public Integer getSelectedCandidate() {
+        return selectedCandidate;
     }
 }

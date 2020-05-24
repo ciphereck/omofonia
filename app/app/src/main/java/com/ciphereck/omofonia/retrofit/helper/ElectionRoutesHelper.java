@@ -1,8 +1,10 @@
 package com.ciphereck.omofonia.retrofit.helper;
 
 import com.ciphereck.omofonia.model.election.Election;
+import com.ciphereck.omofonia.model.request.VoteModel;
 import com.ciphereck.omofonia.retrofit.RetrofitInstance;
 import com.ciphereck.omofonia.retrofit.routes.ElectionRoutes;
+import com.google.gson.JsonElement;
 
 import java.util.List;
 
@@ -19,6 +21,16 @@ public class ElectionRoutesHelper {
                 .subscribeOn(Schedulers.computation())
                 .filter(electionResponseModel -> electionResponseModel.isSuccess())
                 .map(electionResponseModel -> electionResponseModel.getElectionList())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public static Observable<JsonElement> vote(VoteModel voteModel) {
+        return RetrofitInstance
+                .getInstance()
+                .create(ElectionRoutes.class)
+                .vote(voteModel)
+                .subscribeOn(Schedulers.computation())
+                .filter(jsonElement -> jsonElement.getAsJsonObject().get("success").getAsBoolean())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 }
