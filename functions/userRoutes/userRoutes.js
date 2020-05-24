@@ -9,6 +9,18 @@ const unirest = require("unirest");
 const aadhaarFunctions = require("../aadhaarSupport")
 
 app.route('/aadhaar').post(isAuthenticated, addAadhaar);
+app.route('/vote').post(isAuthenticated, addVote);
+
+function addVote(req, res) {
+    electionId = req.body.electionId;
+    candidateId = req.body.candidateId;
+    email = req.body.email;
+    console.log(email, candidateId, electionId)
+    res.send({
+        "success": true,
+        "message": "data is here"
+    })
+}
 
 function addAadhaar(req, res) {
     console.log(req.body)
