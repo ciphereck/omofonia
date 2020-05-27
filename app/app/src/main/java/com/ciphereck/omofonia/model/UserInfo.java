@@ -15,6 +15,20 @@ public class UserInfo {
     String aadhaarName;
     @SerializedName("address")
     String address;
+    @SerializedName("dob")
+    String dob;
+    @SerializedName("gender")
+    String gender;
+    @SerializedName("hashedMobileNo")
+    String hashedMobileNumber;
+    @SerializedName("password")
+    String password;
+    @SerializedName("picInJP2000")
+    String aadhaarPicJP2000;
+    @SerializedName("aadhaarNumber")
+    String aadhaarNumber;
+    @SerializedName("mobileNumber")
+    String mobileNumber;
 
     public UserInfo(boolean isAdmin, String email, String name, String photo, String aadhaarName, String address, String dob, String gender, String hashedMobileNumber, String password, String aadhaarPicJP2000, String aadhaarNumber, String mobileNumber) {
         this.isAdmin = isAdmin;
@@ -46,21 +60,6 @@ public class UserInfo {
         this.aadhaarPicJP2000 = aadhaarPicJP2000;
         this.aadhaarNumber = aadhaarNumber;
     }
-
-    @SerializedName("dob")
-    String dob;
-    @SerializedName("gender")
-    String gender;
-    @SerializedName("hashedMobileNo")
-    String hashedMobileNumber;
-    @SerializedName("password")
-    String password;
-    @SerializedName("picInJP2000")
-    String aadhaarPicJP2000;
-    @SerializedName("aadhaarNumber")
-    String aadhaarNumber;
-    @SerializedName("mobileNumber")
-    String mobileNumber;
 
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
