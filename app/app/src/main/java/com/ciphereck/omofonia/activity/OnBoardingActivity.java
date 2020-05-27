@@ -40,7 +40,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             mobileFieldSetEnable(false);
         }
         if (user.getUserInfo().getMobileNumber() != null) {
-            startActivity(new Intent(this, ElectionActivity.class));
+            startActivity(new Intent(this, UserActivity.class));
         }
     }
 
@@ -84,7 +84,7 @@ public class OnBoardingActivity extends AppCompatActivity {
                     .subscribe(responseModel -> {
                         if(responseModel.getAsJsonObject().get("success").getAsBoolean()) {
                             user.getUserInfo().setMobileNumber(mobileNumber.getText().toString());
-                            startActivity(new Intent(this, ElectionActivity.class));
+                            startActivity(new Intent(this, UserActivity.class));
                         }
                         showToast(responseModel.toString());
                     }, err -> System.out.println(err));
