@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ciphereck.omofonia.R;
 import com.ciphereck.omofonia.model.election.Candidate;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +40,13 @@ public class CandidateAdapter extends ArrayAdapter<Candidate> {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.candidate, null, true);
 
-        TextView candidateName = view.findViewById(R.id.candidateName);
-        TextView partyName = view.findViewById(R.id.partyName);
+        TextView candidateName = view.findViewById(R.id.textView8);
+        TextView partyName = view.findViewById(R.id.textView7);
+        ImageView partyImage = view.findViewById(R.id.imageView2);
+        ImageView candidateImage = view.findViewById(R.id.imageView3);
+
+        Picasso.get().load(candidate.getParty().getPartySign()).into(partyImage);
+        Picasso.get().load(candidate.getPicUrl()).into(candidateImage);
 
         candidateName.setText(candidate.getName());
         partyName.setText(candidate.getParty().getName());
