@@ -36,7 +36,7 @@ public class ElectionListAdapter extends ArrayAdapter<Election> {
 
         TextView electionId = view.findViewById(R.id.electionId);
         TextView electionName = view.findViewById(R.id.electionName);
-        TextView voteCount = view.findViewById(R.id.totalVotesCount);
+        TextView voteCount = view.findViewById(R.id.totalVotesCasted);
 
         electionId.setText(election.getId());
         electionName.setText(election.getElectionName());
