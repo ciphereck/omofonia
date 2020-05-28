@@ -10,15 +10,19 @@
         android:id="@+id/candidateList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp">
-    </ListView>
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="100dp"></ListView>
 
     <Button
         android:id="@+id/vote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Vote"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="167dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/candidateList" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

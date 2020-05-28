@@ -9,10 +9,11 @@ import com.ciphereck.omofonia.R;
 import com.ciphereck.omofonia.model.election.Election;
 import com.ciphereck.omofonia.retrofit.helper.ElectionRoutesHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ElectionActivity extends AppCompatActivity {
-    List<Election> electionList;
+    List<Election> electionList = new ArrayList<>();
     ListView electionListView;
 
     @Override
@@ -24,7 +25,11 @@ public class ElectionActivity extends AppCompatActivity {
         ElectionRoutesHelper
                 .getAllElectionData()
                 .subscribe(elections -> {
-                    electionList = elections;
+                    for(int i=0; i<elections.size(); i++) {
+                        if(elections.get(i)!=null) {
+                            electionList.add(elections.get(i));
+                        }
+                    }
                     System.out.println(elections.toString());
                     ElectionListAdapter adapter = new ElectionListAdapter(electionList, this);
                     electionListView.setAdapter(adapter);
