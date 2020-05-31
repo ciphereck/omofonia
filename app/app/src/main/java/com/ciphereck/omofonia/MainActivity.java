@@ -20,6 +20,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 
 public class MainActivity extends AppCompatActivity {
     SignInButton signInButton;
+    GoogleSignInClient mGoogleSignInClient;
     int RC_SIGN_IN = 1;
 
     @Override
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
 
-        GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
