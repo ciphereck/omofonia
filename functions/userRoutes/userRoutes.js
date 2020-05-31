@@ -27,10 +27,12 @@ function addVote(req, res) {
         })
         .end(function(r) {
             if(r.error) return res.send({
-                success: false
+                success: false,
+                message: r.error
             })
             return res.send({
-                success: true
+                success: true,
+                message: "Your vote casted successfully"
             })
         })
 }
