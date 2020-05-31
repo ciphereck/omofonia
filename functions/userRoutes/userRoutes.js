@@ -7,6 +7,8 @@ const request = require('request');
 const jwt = require('jsonwebtoken');
 const unirest = require("unirest");
 const aadhaarFunctions = require("../aadhaarSupport")
+const SHA256 = require("crypto-js/sha256");
+
 
 app.route('/aadhaar').post(isAuthenticated, addAadhaar);
 app.route('/vote').post(isAuthenticated, addVote);
@@ -14,12 +16,23 @@ app.route('/vote').post(isAuthenticated, addVote);
 function addVote(req, res) {
     electionId = req.body.electionId;
     candidateId = req.body.candidateId;
-    email = req.body.email;
-    console.log(email, candidateId, electionId)
-    res.send({
-        "success": true,
-        "message": "data is here"
-    })
+    email = SHA256(req.body.email).toString()
+
+    return unirest
+        .post("http://18.188.101.149:3051/vote/" + electionId)
+        .type('json')
+        .send({
+            candidateId: candidateId,
+            voterId: email
+        })
+        .end(function(r) {
+            if(r.error) return res.send({
+                success: false
+            })
+            return res.send({
+                success: true
+            })
+        })
 }
 
 function addAadhaar(req, res) {
