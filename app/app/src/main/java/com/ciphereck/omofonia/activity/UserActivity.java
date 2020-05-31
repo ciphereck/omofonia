@@ -2,6 +2,8 @@ package com.ciphereck.omofonia.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ public class UserActivity extends AppCompatActivity {
     UserInfo userInfo;
     ImageView imageView;
     GoogleApiClient mGoogleApiClient;
+    Button adminPanel;
 
     @Override
     protected void onStart() {
@@ -74,5 +77,15 @@ public class UserActivity extends AppCompatActivity {
                         }
                     });
         });
+
+        adminPanel = findViewById(R.id.button5);
+        if(!userInfo.isAdmin()) {
+            adminPanel.setVisibility(View.GONE);
+        }else {
+            adminPanel.setVisibility(View.VISIBLE);
+            adminPanel.setOnClickListener(v -> {
+                startActivity(new Intent(this, AdminPanelActivity.class));
+            });
+        }
     }
 }
