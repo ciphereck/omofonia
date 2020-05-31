@@ -1,5 +1,5 @@
 class Vote {
-	constructor(candidateId, voterId, electionId) {
+	constructor(electionId, candidateId, voterId) {
 		this.candidateId = candidateId
 		this.voterId = voterId
 		this.electionId = electionId

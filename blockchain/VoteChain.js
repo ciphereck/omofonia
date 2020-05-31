@@ -7,6 +7,10 @@ class VoteChain {
         console.log("Vote Chain Instanitated")
     }
 
+    getLength() {
+        return this.voteChain.length
+    }
+
     getVoteChain() {
         return this.voteChain
     }
@@ -18,16 +22,15 @@ class VoteChain {
         return index
     }
 
-    addVote(index) {
-        if(index >= this.voteChain.length) {
+    addVote(electionId, candidateId, voterId) {
+        if(electionId >= this.voteChain.length) {
             console.log("Invalid Election Id")
             return null
         }
 
-        const max = 5
-        const voteData = new vote.Vote(Math.floor(Math.random() * max), Math.floor(Math.random() * max), Math.floor(Math.random() * max))
-        const newBlock = this.voteChain[index].generateNextBlock(voteData)
-        return this.voteChain[index].addBlock(newBlock)
+        const voteData = new vote.Vote(electionId, candidateId, voterId)
+        const newBlock = this.voteChain[electionId].generateNextBlock(voteData)
+        return this.voteChain[electionId].addBlock(newBlock)
     }
 
     getSpecificBlockChain(index) {
