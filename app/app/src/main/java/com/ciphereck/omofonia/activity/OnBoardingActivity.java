@@ -99,7 +99,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             UserRoutesHelper
                     .sendOtp(new OtpRequestModel(mobileNumber.getText().toString(), finalNumberToGuess.toString(), user.getToken()))
                     .subscribe(responseModel -> {
-                        showToast(responseModel.toString());
+//                        showToast(responseModel.toString());
                         this.onStart();
                         otp.setEnabled(true);
                         if(responseModel.getAsJsonObject().get("success").getAsBoolean())
@@ -125,7 +125,7 @@ public class OnBoardingActivity extends AppCompatActivity {
                     .updateAadhaarDetails(aadhaarRequestModel)
                     .subscribe(userInfo -> {
                         System.out.println("aaya yhape");
-                        showToast("aaya yhape");
+//                        showToast("aaya yhape");
                         user.setUserInfo(userInfo);
                         aadhadDataSetEnable(false);
                         mobileFieldSetEnable(true);
