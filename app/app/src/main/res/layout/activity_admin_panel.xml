@@ -66,6 +66,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="@android:drawable/btn_dropdown"
         app:layout_constraintTop_toBottomOf="@+id/button6"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -99,7 +100,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Pic URL"
+        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView12"
@@ -167,8 +168,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Create Election"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        tools:layout_editor_absoluteX="162dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <Button
         android:id="@+id/button7"

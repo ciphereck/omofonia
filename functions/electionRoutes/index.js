@@ -8,6 +8,25 @@ const db = database.ref();
 
 const modifyRoutes = require('./electionCreate')
 
+app.use('/change', updateElection)
+
+function updateElection(req, res) {
+	db
+		.child('election')
+		.set(req.body.election)
+		.then(() => {
+			return res.send({
+				"success": true
+			})
+		})
+		.catch((err) => {
+			return res.send({
+				"success": false,
+				message: err
+			})
+		})
+}
+
 app.use('/modify', modifyRoutes)
 
 app.route('/info')

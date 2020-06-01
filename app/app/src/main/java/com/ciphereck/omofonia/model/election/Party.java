@@ -29,4 +29,16 @@ public class Party implements Serializable {
     public String getPartyUrl() {
         return partyUrl;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPartySign(String partySign) {
+        this.partySign = partySign;
+    }
+
+    public void setPartyUrl(String partyUrl) {
+        this.partyUrl = partyUrl;
+    }
 }

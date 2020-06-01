@@ -36,4 +36,20 @@ public class Candidate implements Serializable {
     public String getPicUrl() {
         return picUrl;
     }
+
+    public void setAadhaarNumber(String aadhaarNumber) {
+        this.aadhaarNumber = aadhaarNumber;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setParty(Party party) {
+        this.party = party;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
+    }
 }
