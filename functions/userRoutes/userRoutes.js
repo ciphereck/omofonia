@@ -51,7 +51,7 @@ function addAadhaar(req, res) {
         .child("users")
         .child(req.body.email)
         
-	x.set(jsonAadhar)
+	return x.set(jsonAadhar)
 	.then((snapshot) => {
 //		console.lof(snapshot.val())
 	    x
@@ -62,10 +62,10 @@ function addAadhaar(req, res) {
                	 		"message": "updated data successfully",
 				"data": snapshot.val()
             	}).catch((err) => {
-			return res.send({
-				"success": false,
-				"messsage": err
-			})
+			return //res.send({
+			//	"success": false,
+			//	"messsage": err
+			//})
 		})
         })
         .catch((err) => {

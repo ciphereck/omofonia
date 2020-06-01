@@ -11,9 +11,10 @@ const modifyRoutes = require('./electionCreate')
 app.route('/change').post(updateElection)
 
 function updateElection(req, res) {
+	console.log(req.body)
 	db
 		.child('election')
-		.set(req.body.election)
+		.set(JSON.parse( JSON.stringify(req.body ) ))
 		.then(() => {
 			return res.send({
 				"success": true
