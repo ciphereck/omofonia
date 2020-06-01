@@ -30,6 +30,12 @@ class VoteChain {
             console.log("Invalid Election Id")
             return null
         }
+        blk = this.voteChain.getSpecificBlockChain(electionId)
+        for(var i=1; i<blk.length; i++) {
+            if(blk[i].voteData.voterId == voterId) {
+                return false
+            }
+        }
 
         const voteData = new vote.Vote(electionId, candidateId, voterId)
         const newBlock = this.voteChain[electionId].generateNextBlock(voteData)
