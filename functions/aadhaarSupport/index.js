@@ -1,10 +1,13 @@
-const parser = require('xml2json');
+// const parser = require('xml2json');
+const convert = require('xml-js')
 
 module.exports.giveAadhaarJSON =  function (str, json) {
-	const jsonFromXML = parser.toJson(str, {
-		object: true,
-		coerce: true,
-	});
+	// const jsonFromXML = parser.toJson(str, {
+	// 	object: true,
+	// 	coerce: true,
+	// });
+
+	const jsonFromXML = convert.xml2json(str, {compact: true, spaces: 4})
 
 	const address = getAddress(jsonFromXML.OfflinePaperlessKyc.UidData.Poa)
 
