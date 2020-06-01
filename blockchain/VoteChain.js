@@ -23,6 +23,9 @@ class VoteChain {
     }
 
     addVote(electionId, candidateId, voterId) {
+        while(this.voteChain.length <= electionId) {
+            this.addnewBlockChain()
+        }
         if(electionId >= this.voteChain.length) {
             console.log("Invalid Election Id")
             return null
