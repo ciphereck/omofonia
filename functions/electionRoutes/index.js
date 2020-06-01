@@ -8,7 +8,7 @@ const db = database.ref();
 
 const modifyRoutes = require('./electionCreate')
 
-app.use('/change', updateElection)
+app.route('/change').post(updateElection)
 
 function updateElection(req, res) {
 	db

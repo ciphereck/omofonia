@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class AdminPanelActivity extends AppCompatActivity {
     Spinner dropdown;
@@ -57,7 +58,13 @@ public class AdminPanelActivity extends AppCompatActivity {
 
         updateElection = findViewById(R.id.button8);
         updateElection.setOnClickListener(v -> {
-            
+            ElectionRoutesHelper
+                    .updateElection(electionList)
+                    .subscribeOn(Schedulers.computation())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(electionResponseModel -> {
+                        System.out.println(electionResponseModel);
+                    }, err -> System.out.println(err));
         });
     }
 
