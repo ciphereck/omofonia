@@ -19,7 +19,7 @@ function addVote(req, res) {
     email = SHA256(req.body.email).toString()
 
     return unirest
-        .post("http://18.188.101.149:3051/vote/" + electionId)
+        .post("http://13.58.174.114:3001/vote/" + electionId)
         .type('json')
         .send({
             candidateId: candidateId,
