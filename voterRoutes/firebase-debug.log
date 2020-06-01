@@ -1,0 +1,544 @@
+[debug] [2020-02-24T07:05:14.085Z] ----------------------------------------------------------------------
+[debug] [2020-02-24T07:05:14.087Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2020-02-24T07:05:14.087Z] CLI Version:   7.11.0
+[debug] [2020-02-24T07:05:14.087Z] Platform:      linux
+[debug] [2020-02-24T07:05:14.087Z] Node Version:  v10.16.2
+[debug] [2020-02-24T07:05:14.087Z] Time:          Mon Feb 24 2020 12:35:14 GMT+0530 (India Standard Time)
+[debug] [2020-02-24T07:05:14.087Z] ----------------------------------------------------------------------
+[debug] [2020-02-24T07:05:14.087Z] 
+[debug] [2020-02-24T07:05:14.095Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-24T07:05:14.096Z] > authorizing via signed-in user
+[debug] [2020-02-24T07:05:14.096Z] [iam] checking project omofonia-e5dac for permissions ["firebase.projects.get"]
+[debug] [2020-02-24T07:05:14.097Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/omofonia-e5dac:testIamPermissions  
+
+[debug] [2020-02-24T07:05:15.799Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-24T07:05:15.804Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/omofonia-e5dac  
+ 
+[debug] [2020-02-24T07:05:16.426Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía'...
+[info] 
+[debug] [2020-02-24T07:05:16.442Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/omofonia-e5dac/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2020-02-24T07:05:17.257Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions" for Cloud Functions...
+[debug] [2020-02-24T07:05:17.353Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:05:17.354Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-02-24T07:05:17.354Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:05:17.354Z] [worker-~diagnostic~-ad2d57e2-99a9-4d08-8b9e-44f39621dcc5]: Assigning socketPath: /tmp/fire_emu_14819.sock
+[debug] [2020-02-24T07:05:17.355Z] [worker-~diagnostic~-ad2d57e2-99a9-4d08-8b9e-44f39621dcc5]: BUSY
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-02-24T07:05:17.607Z] [runtime-status] [14819] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:05:17.609Z] [runtime-status] [14819] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:05:17.613Z] [runtime-status] [14819] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:05:17.615Z] [runtime-status] [14819] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:05:17.616Z] [runtime-status] [14819] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  TypeError: Router.use() requires a middleware function
+    at Function.use (/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/express/lib/router/index.js:451:11)
+    at Object.<anonymous> (/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js:10:5)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/index.js:23:21)
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2020-02-24T07:05:18.030Z] [worker-~diagnostic~-ad2d57e2-99a9-4d08-8b9e-44f39621dcc5]: exited
+[debug] [2020-02-24T07:05:18.030Z] [worker-~diagnostic~-ad2d57e2-99a9-4d08-8b9e-44f39621dcc5]: FINISHED
+[debug] [2020-02-24T07:05:56.342Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:05:57.345Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0
+[debug] [2020-02-24T07:05:57.363Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:05:57.364Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-02-24T07:05:57.364Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:05:57.365Z] [worker-~diagnostic~-cf9c04d4-d46e-4189-9578-f99dc7a1dbf0]: Assigning socketPath: /tmp/fire_emu_14838.sock
+[debug] [2020-02-24T07:05:57.365Z] [worker-~diagnostic~-cf9c04d4-d46e-4189-9578-f99dc7a1dbf0]: BUSY
+[debug] [2020-02-24T07:05:57.703Z] [runtime-status] [14838] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:05:57.705Z] [runtime-status] [14838] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:05:57.709Z] [runtime-status] [14838] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:05:57.712Z] [runtime-status] [14838] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:05:57.713Z] [runtime-status] [14838] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  ReferenceError: addInfo is not defined
+    at Object.<anonymous> (/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js:12:9)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/index.js:23:21)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2020-02-24T07:05:58.098Z] [worker-~diagnostic~-cf9c04d4-d46e-4189-9578-f99dc7a1dbf0]: exited
+[debug] [2020-02-24T07:05:58.099Z] [worker-~diagnostic~-cf9c04d4-d46e-4189-9578-f99dc7a1dbf0]: FINISHED
+[debug] [2020-02-24T07:06:00.081Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:06:00.269Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:06:01.270Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0
+[debug] [2020-02-24T07:06:01.275Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:06:01.275Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-02-24T07:06:01.275Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:06:01.275Z] [worker-~diagnostic~-46a1165e-80eb-4aaa-9fac-fa70cba9d81d]: Assigning socketPath: /tmp/fire_emu_14849.sock
+[debug] [2020-02-24T07:06:01.275Z] [worker-~diagnostic~-46a1165e-80eb-4aaa-9fac-fa70cba9d81d]: BUSY
+[debug] [2020-02-24T07:06:01.566Z] [runtime-status] [14849] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:06:01.568Z] [runtime-status] [14849] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:06:01.572Z] [runtime-status] [14849] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:06:01.575Z] [runtime-status] [14849] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:06:01.576Z] [runtime-status] [14849] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  ReferenceError: addInfo is not defined
+    at Object.<anonymous> (/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js:12:9)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/index.js:23:21)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2020-02-24T07:06:01.948Z] [worker-~diagnostic~-46a1165e-80eb-4aaa-9fac-fa70cba9d81d]: exited
+[debug] [2020-02-24T07:06:01.951Z] [worker-~diagnostic~-46a1165e-80eb-4aaa-9fac-fa70cba9d81d]: FINISHED
+[debug] [2020-02-24T07:06:18.581Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:06:19.583Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0
+[debug] [2020-02-24T07:06:19.598Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:06:19.598Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-02-24T07:06:19.598Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:06:19.599Z] [worker-~diagnostic~-06744f36-2bcd-43b9-bfa5-622e6bdfaf0f]: Assigning socketPath: /tmp/fire_emu_14867.sock
+[debug] [2020-02-24T07:06:19.599Z] [worker-~diagnostic~-06744f36-2bcd-43b9-bfa5-622e6bdfaf0f]: BUSY
+[debug] [2020-02-24T07:06:20.262Z] [runtime-status] [14867] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:06:20.264Z] [runtime-status] [14867] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:06:20.268Z] [runtime-status] [14867] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:06:20.271Z] [runtime-status] [14867] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:06:20.273Z] [runtime-status] [14867] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[info] ✔  functions[api]: http function initialized (http://localhost:5001/omofonia-e5dac/us-central1/api).
+[debug] [2020-02-24T07:06:20.586Z] [worker-~diagnostic~-06744f36-2bcd-43b9-bfa5-622e6bdfaf0f]: IDLE
+[debug] [2020-02-24T07:06:38.951Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-02-24T07:06:38.951Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-02-24T07:06:38.952Z] Accepted request GET /omofonia-e5dac/us-central1/api/voter/info --> api
+[debug] [2020-02-24T07:06:38.958Z] [worker-pool] addWorker(api)
+[debug] [2020-02-24T07:06:38.958Z] [worker-pool] Adding worker with key api, total=1
+[debug] [2020-02-24T07:06:38.958Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-02-24T07:06:38.958Z] [worker-api-f834b6bb-6aa3-4b5a-989c-33491362938a]: Assigning socketPath: /tmp/fire_emu_14945.sock
+[debug] [2020-02-24T07:06:38.958Z] [worker-api-f834b6bb-6aa3-4b5a-989c-33491362938a]: BUSY
+[debug] [2020-02-24T07:06:39.271Z] [runtime-status] [14945] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:06:39.273Z] [runtime-status] [14945] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:06:39.277Z] [runtime-status] [14945] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:06:39.280Z] [runtime-status] [14945] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:06:39.281Z] [runtime-status] [14945] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:06:39.621Z] [runtime-status] [14945] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-02-24T07:06:39.622Z] [runtime-status] [14945] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-02-24T07:06:39.622Z] [runtime-status] [14945] Running api in mode HTTPS
+[debug] [2020-02-24T07:06:39.625Z] [runtime-status] [14945] Attempting to listen to socketPath: /tmp/fire_emu_14945.sock
+[debug] [2020-02-24T07:06:39.628Z] [functions] Runtime ready! Sending request!
+[debug] [2020-02-24T07:06:39.652Z] [runtime-status] [14945] Ephemeral server handling GET request
+[info] >  {}
+[debug] [2020-02-24T07:06:39.658Z] [runtime-status] [14945] Ephemeral server survived.
+[debug] [2020-02-24T07:07:18.030Z] [work-queue] {"queueLength":1,"workRunningCount":1}
+[debug] [2020-02-24T07:07:18.030Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-02-24T07:07:18.030Z] Accepted request GET /omofonia-e5dac/us-central1/api/voter/info?name=Mudit&mobile=7206307664 --> api
+[debug] [2020-02-24T07:07:18.034Z] [worker-pool] addWorker(api)
+[debug] [2020-02-24T07:07:18.034Z] [worker-pool] Adding worker with key api, total=2
+[debug] [2020-02-24T07:07:18.034Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-02-24T07:07:18.035Z] [worker-api-7ab37108-b93d-4cae-ac19-a1a932d36fb6]: Assigning socketPath: /tmp/fire_emu_14968.sock
+[debug] [2020-02-24T07:07:18.035Z] [worker-api-7ab37108-b93d-4cae-ac19-a1a932d36fb6]: BUSY
+[debug] [2020-02-24T07:07:18.313Z] [runtime-status] [14968] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:07:18.315Z] [runtime-status] [14968] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:07:18.320Z] [runtime-status] [14968] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:07:18.323Z] [runtime-status] [14968] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:07:18.325Z] [runtime-status] [14968] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:07:18.622Z] [runtime-status] [14968] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-02-24T07:07:18.622Z] [runtime-status] [14968] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-02-24T07:07:18.622Z] [runtime-status] [14968] Running api in mode HTTPS
+[debug] [2020-02-24T07:07:18.625Z] [runtime-status] [14968] Attempting to listen to socketPath: /tmp/fire_emu_14968.sock
+[debug] [2020-02-24T07:07:18.628Z] [functions] Runtime ready! Sending request!
+[debug] [2020-02-24T07:07:18.739Z] [runtime-status] [14968] Ephemeral server handling GET request
+[info] >  {}
+[debug] [2020-02-24T07:07:18.750Z] [runtime-status] [14968] Ephemeral server survived.
+[debug] [2020-02-24T07:07:35.452Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:07:36.452Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-02-24T07:07:36.453Z] [worker-~diagnostic~-06744f36-2bcd-43b9-bfa5-622e6bdfaf0f]: FINISHING
+[debug] [2020-02-24T07:07:36.454Z] [worker-pool] Marking BUSY worker to finish (api)
+[debug] [2020-02-24T07:07:36.454Z] [worker-api-f834b6bb-6aa3-4b5a-989c-33491362938a]: FINISHING
+[debug] [2020-02-24T07:07:36.454Z] [worker-pool] Marking BUSY worker to finish (api)
+[debug] [2020-02-24T07:07:36.455Z] [worker-api-7ab37108-b93d-4cae-ac19-a1a932d36fb6]: FINISHING
+[debug] [2020-02-24T07:07:36.464Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:07:36.464Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-02-24T07:07:36.464Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:07:36.465Z] [worker-~diagnostic~-ae30cb22-d4f7-48c6-af57-5ed1e8273c79]: Assigning socketPath: /tmp/fire_emu_14986.sock
+[debug] [2020-02-24T07:07:36.465Z] [worker-~diagnostic~-ae30cb22-d4f7-48c6-af57-5ed1e8273c79]: BUSY
+[debug] [2020-02-24T07:07:36.467Z] [worker-~diagnostic~-06744f36-2bcd-43b9-bfa5-622e6bdfaf0f]: exited
+[debug] [2020-02-24T07:07:36.467Z] [worker-~diagnostic~-06744f36-2bcd-43b9-bfa5-622e6bdfaf0f]: FINISHED
+[debug] [2020-02-24T07:07:36.757Z] [runtime-status] [14986] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:07:36.759Z] [runtime-status] [14986] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:07:36.763Z] [runtime-status] [14986] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:07:36.765Z] [runtime-status] [14986] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:07:36.766Z] [runtime-status] [14986] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:07:37.148Z] [worker-~diagnostic~-ae30cb22-d4f7-48c6-af57-5ed1e8273c79]: IDLE
+[debug] [2020-02-24T07:07:38.370Z] [work-queue] {"queueLength":1,"workRunningCount":2}
+[debug] [2020-02-24T07:07:38.370Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-02-24T07:07:38.370Z] Accepted request GET /omofonia-e5dac/us-central1/api/voter/info?name=Mudit&mobile=7206307664 --> api
+[debug] [2020-02-24T07:07:38.370Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-02-24T07:07:38.375Z] [worker-pool] addWorker(api)
+[debug] [2020-02-24T07:07:38.375Z] [worker-pool] Adding worker with key api, total=3
+[debug] [2020-02-24T07:07:38.375Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-02-24T07:07:38.376Z] [worker-api-eafb4ea0-21fd-4796-a8db-648e115388cf]: Assigning socketPath: /tmp/fire_emu_14999.sock
+[debug] [2020-02-24T07:07:38.376Z] [worker-api-eafb4ea0-21fd-4796-a8db-648e115388cf]: BUSY
+[debug] [2020-02-24T07:07:38.657Z] [runtime-status] [14999] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:07:38.659Z] [runtime-status] [14999] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:07:38.662Z] [runtime-status] [14999] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:07:38.665Z] [runtime-status] [14999] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:07:38.666Z] [runtime-status] [14999] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:07:38.962Z] [runtime-status] [14999] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-02-24T07:07:38.962Z] [runtime-status] [14999] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-02-24T07:07:38.962Z] [runtime-status] [14999] Running api in mode HTTPS
+[debug] [2020-02-24T07:07:38.966Z] [runtime-status] [14999] Attempting to listen to socketPath: /tmp/fire_emu_14999.sock
+[debug] [2020-02-24T07:07:38.969Z] [functions] Runtime ready! Sending request!
+[debug] [2020-02-24T07:07:39.004Z] [runtime-status] [14999] Ephemeral server handling GET request
+[info] >  {}
+[debug] [2020-02-24T07:07:39.008Z] [runtime-status] [14999] Ephemeral server survived.
+[debug] [2020-02-24T07:08:01.505Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:08:02.506Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-02-24T07:08:02.506Z] [worker-~diagnostic~-ae30cb22-d4f7-48c6-af57-5ed1e8273c79]: FINISHING
+[debug] [2020-02-24T07:08:02.507Z] [worker-pool] Marking BUSY worker to finish (api)
+[debug] [2020-02-24T07:08:02.507Z] [worker-api-eafb4ea0-21fd-4796-a8db-648e115388cf]: FINISHING
+[debug] [2020-02-24T07:08:02.527Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:08:02.527Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-02-24T07:08:02.528Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:08:02.528Z] [worker-~diagnostic~-28e480e5-2ae5-4d99-bc4e-1d014dfcea52]: Assigning socketPath: /tmp/fire_emu_15019.sock
+[debug] [2020-02-24T07:08:02.529Z] [worker-~diagnostic~-28e480e5-2ae5-4d99-bc4e-1d014dfcea52]: BUSY
+[debug] [2020-02-24T07:08:02.533Z] [worker-~diagnostic~-ae30cb22-d4f7-48c6-af57-5ed1e8273c79]: exited
+[debug] [2020-02-24T07:08:02.533Z] [worker-~diagnostic~-ae30cb22-d4f7-48c6-af57-5ed1e8273c79]: FINISHED
+[debug] [2020-02-24T07:08:02.844Z] [runtime-status] [15019] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:08:02.846Z] [runtime-status] [15019] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:08:02.850Z] [runtime-status] [15019] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:08:02.852Z] [runtime-status] [15019] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:08:02.854Z] [runtime-status] [15019] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:08:03.178Z] [worker-~diagnostic~-28e480e5-2ae5-4d99-bc4e-1d014dfcea52]: IDLE
+[debug] [2020-02-24T07:08:03.308Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:08:04.310Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-02-24T07:08:04.310Z] [worker-~diagnostic~-28e480e5-2ae5-4d99-bc4e-1d014dfcea52]: FINISHING
+[debug] [2020-02-24T07:08:04.311Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-02-24T07:08:04.327Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:08:04.328Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-02-24T07:08:04.328Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:08:04.329Z] [worker-~diagnostic~-ccb345f8-17b7-4150-ba0b-5e3e38d7a947]: Assigning socketPath: /tmp/fire_emu_15030.sock
+[debug] [2020-02-24T07:08:04.329Z] [worker-~diagnostic~-ccb345f8-17b7-4150-ba0b-5e3e38d7a947]: BUSY
+[debug] [2020-02-24T07:08:04.332Z] [worker-~diagnostic~-28e480e5-2ae5-4d99-bc4e-1d014dfcea52]: exited
+[debug] [2020-02-24T07:08:04.333Z] [worker-~diagnostic~-28e480e5-2ae5-4d99-bc4e-1d014dfcea52]: FINISHED
+[debug] [2020-02-24T07:08:04.681Z] [runtime-status] [15030] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:08:04.683Z] [runtime-status] [15030] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:08:04.690Z] [runtime-status] [15030] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:08:04.693Z] [runtime-status] [15030] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:08:04.696Z] [runtime-status] [15030] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:08:05.082Z] [worker-~diagnostic~-ccb345f8-17b7-4150-ba0b-5e3e38d7a947]: IDLE
+[debug] [2020-02-24T07:08:06.043Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-02-24T07:08:06.043Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-02-24T07:08:06.043Z] Accepted request GET /omofonia-e5dac/us-central1/api/voter/info?name=Mudit&mobile=7206307664 --> api
+[debug] [2020-02-24T07:08:06.043Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-02-24T07:08:06.048Z] [worker-pool] addWorker(api)
+[debug] [2020-02-24T07:08:06.048Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-02-24T07:08:06.048Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-02-24T07:08:06.048Z] [worker-api-d7dbafd4-1091-4b24-8107-6b5a94f71f4e]: Assigning socketPath: /tmp/fire_emu_15044.sock
+[debug] [2020-02-24T07:08:06.049Z] [worker-api-d7dbafd4-1091-4b24-8107-6b5a94f71f4e]: BUSY
+[debug] [2020-02-24T07:08:06.340Z] [runtime-status] [15044] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:08:06.342Z] [runtime-status] [15044] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:08:06.346Z] [runtime-status] [15044] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:08:06.349Z] [runtime-status] [15044] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:08:06.350Z] [runtime-status] [15044] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:08:06.657Z] [runtime-status] [15044] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-02-24T07:08:06.658Z] [runtime-status] [15044] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-02-24T07:08:06.658Z] [runtime-status] [15044] Running api in mode HTTPS
+[debug] [2020-02-24T07:08:06.661Z] [runtime-status] [15044] Attempting to listen to socketPath: /tmp/fire_emu_15044.sock
+[debug] [2020-02-24T07:08:06.664Z] [functions] Runtime ready! Sending request!
+[debug] [2020-02-24T07:08:06.695Z] [runtime-status] [15044] Ephemeral server handling GET request
+[info] >  {}
+[debug] [2020-02-24T07:08:06.702Z] [runtime-status] [15044] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-02-24T07:08:06.705Z] [worker-api-d7dbafd4-1091-4b24-8107-6b5a94f71f4e]: IDLE
+[debug] [2020-02-24T07:08:06.705Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-02-24T07:08:28.355Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:08:29.356Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-02-24T07:08:29.357Z] [worker-~diagnostic~-ccb345f8-17b7-4150-ba0b-5e3e38d7a947]: FINISHING
+[debug] [2020-02-24T07:08:29.357Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-02-24T07:08:29.359Z] [worker-api-d7dbafd4-1091-4b24-8107-6b5a94f71f4e]: FINISHING
+[debug] [2020-02-24T07:08:29.383Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:08:29.384Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-02-24T07:08:29.384Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:08:29.385Z] [worker-~diagnostic~-5d5463cc-8444-4bd4-beb6-5c0983bd881c]: Assigning socketPath: /tmp/fire_emu_15073.sock
+[debug] [2020-02-24T07:08:29.386Z] [worker-~diagnostic~-5d5463cc-8444-4bd4-beb6-5c0983bd881c]: BUSY
+[debug] [2020-02-24T07:08:29.396Z] [worker-~diagnostic~-ccb345f8-17b7-4150-ba0b-5e3e38d7a947]: exited
+[debug] [2020-02-24T07:08:29.396Z] [worker-~diagnostic~-ccb345f8-17b7-4150-ba0b-5e3e38d7a947]: FINISHED
+[debug] [2020-02-24T07:08:29.397Z] [worker-api-d7dbafd4-1091-4b24-8107-6b5a94f71f4e]: exited
+[debug] [2020-02-24T07:08:29.397Z] [worker-api-d7dbafd4-1091-4b24-8107-6b5a94f71f4e]: FINISHED
+[debug] [2020-02-24T07:08:29.716Z] [runtime-status] [15073] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:08:29.718Z] [runtime-status] [15073] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:08:29.722Z] [runtime-status] [15073] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:08:29.726Z] [runtime-status] [15073] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:08:29.727Z] [runtime-status] [15073] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:08:30.044Z] [worker-~diagnostic~-5d5463cc-8444-4bd4-beb6-5c0983bd881c]: IDLE
+[debug] [2020-02-24T07:08:30.877Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-02-24T07:08:30.877Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-02-24T07:08:30.877Z] Accepted request GET /omofonia-e5dac/us-central1/api/voter/info?name=Mudit&mobile=7206307664 --> api
+[debug] [2020-02-24T07:08:30.877Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-02-24T07:08:30.877Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-02-24T07:08:30.881Z] [worker-pool] addWorker(api)
+[debug] [2020-02-24T07:08:30.881Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-02-24T07:08:30.881Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-02-24T07:08:30.881Z] [worker-api-cc21cee3-1fa5-402d-81f2-5bfd0cb12c57]: Assigning socketPath: /tmp/fire_emu_15087.sock
+[debug] [2020-02-24T07:08:30.881Z] [worker-api-cc21cee3-1fa5-402d-81f2-5bfd0cb12c57]: BUSY
+[debug] [2020-02-24T07:08:31.173Z] [runtime-status] [15087] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:08:31.175Z] [runtime-status] [15087] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:08:31.179Z] [runtime-status] [15087] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:08:31.181Z] [runtime-status] [15087] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:08:31.183Z] [runtime-status] [15087] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:08:31.512Z] [runtime-status] [15087] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-02-24T07:08:31.513Z] [runtime-status] [15087] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-02-24T07:08:31.513Z] [runtime-status] [15087] Running api in mode HTTPS
+[debug] [2020-02-24T07:08:31.518Z] [runtime-status] [15087] Attempting to listen to socketPath: /tmp/fire_emu_15087.sock
+[debug] [2020-02-24T07:08:31.522Z] [functions] Runtime ready! Sending request!
+[debug] [2020-02-24T07:08:31.566Z] [runtime-status] [15087] Ephemeral server handling GET request
+[info] >  params
+[debug] [2020-02-24T07:08:31.573Z] [runtime-status] [15087] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-02-24T07:08:31.575Z] [worker-api-cc21cee3-1fa5-402d-81f2-5bfd0cb12c57]: IDLE
+[debug] [2020-02-24T07:08:31.575Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-02-24T07:08:39.152Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-02-24T07:08:39.152Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-02-24T07:08:39.152Z] Accepted request GET /omofonia-e5dac/us-central1/api/voter/info --> api
+[debug] [2020-02-24T07:08:39.152Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-02-24T07:08:39.153Z] [worker-api-cc21cee3-1fa5-402d-81f2-5bfd0cb12c57]: Assigning socketPath: /tmp/fire_emu_15087.sock
+[debug] [2020-02-24T07:08:39.153Z] [worker-api-cc21cee3-1fa5-402d-81f2-5bfd0cb12c57]: BUSY
+[debug] [2020-02-24T07:08:39.153Z] [runtime-status] [15087] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-02-24T07:08:39.154Z] [runtime-status] [15087] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-02-24T07:08:39.154Z] [runtime-status] [15087] Running api in mode HTTPS
+[debug] [2020-02-24T07:08:39.154Z] [runtime-status] [15087] Attempting to listen to socketPath: /tmp/fire_emu_15087.sock
+[debug] [2020-02-24T07:08:39.155Z] [functions] Runtime ready! Sending request!
+[debug] [2020-02-24T07:08:39.157Z] [runtime-status] [15087] Ephemeral server handling GET request
+[info] >  params
+[debug] [2020-02-24T07:08:39.160Z] [runtime-status] [15087] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-02-24T07:08:39.161Z] [worker-api-cc21cee3-1fa5-402d-81f2-5bfd0cb12c57]: IDLE
+[debug] [2020-02-24T07:08:39.161Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-02-24T07:09:17.141Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:09:17.368Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:09:18.370Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-02-24T07:09:18.371Z] [worker-~diagnostic~-5d5463cc-8444-4bd4-beb6-5c0983bd881c]: FINISHING
+[debug] [2020-02-24T07:09:18.371Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-02-24T07:09:18.371Z] [worker-api-cc21cee3-1fa5-402d-81f2-5bfd0cb12c57]: FINISHING
+[debug] [2020-02-24T07:09:18.383Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:09:18.384Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-02-24T07:09:18.384Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:09:18.384Z] [worker-~diagnostic~-da070109-cf6d-4f00-af0d-15416c7e8fe1]: Assigning socketPath: /tmp/fire_emu_15241.sock
+[debug] [2020-02-24T07:09:18.384Z] [worker-~diagnostic~-da070109-cf6d-4f00-af0d-15416c7e8fe1]: BUSY
+[debug] [2020-02-24T07:09:18.385Z] [worker-~diagnostic~-5d5463cc-8444-4bd4-beb6-5c0983bd881c]: exited
+[debug] [2020-02-24T07:09:18.385Z] [worker-~diagnostic~-5d5463cc-8444-4bd4-beb6-5c0983bd881c]: FINISHED
+[debug] [2020-02-24T07:09:18.385Z] [worker-api-cc21cee3-1fa5-402d-81f2-5bfd0cb12c57]: exited
+[debug] [2020-02-24T07:09:18.385Z] [worker-api-cc21cee3-1fa5-402d-81f2-5bfd0cb12c57]: FINISHED
+[debug] [2020-02-24T07:09:18.644Z] [runtime-status] [15241] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:09:18.646Z] [runtime-status] [15241] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:09:18.650Z] [runtime-status] [15241] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:09:18.652Z] [runtime-status] [15241] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:09:18.654Z] [runtime-status] [15241] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:09:18.934Z] [worker-~diagnostic~-da070109-cf6d-4f00-af0d-15416c7e8fe1]: IDLE
+[debug] [2020-02-24T07:09:20.556Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-02-24T07:09:20.556Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-02-24T07:09:20.556Z] Accepted request GET /omofonia-e5dac/us-central1/api/voter/info?name=Mudit&mobile=7206307664 --> api
+[debug] [2020-02-24T07:09:20.556Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-02-24T07:09:20.556Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-02-24T07:09:20.562Z] [worker-pool] addWorker(api)
+[debug] [2020-02-24T07:09:20.562Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-02-24T07:09:20.562Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-02-24T07:09:20.562Z] [worker-api-830b654e-1e0d-4cb8-84b3-517a65d0d287]: Assigning socketPath: /tmp/fire_emu_15255.sock
+[debug] [2020-02-24T07:09:20.562Z] [worker-api-830b654e-1e0d-4cb8-84b3-517a65d0d287]: BUSY
+[debug] [2020-02-24T07:09:20.875Z] [runtime-status] [15255] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:09:20.877Z] [runtime-status] [15255] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:09:20.881Z] [runtime-status] [15255] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:09:20.883Z] [runtime-status] [15255] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:09:20.884Z] [runtime-status] [15255] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:09:21.180Z] [runtime-status] [15255] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-02-24T07:09:21.181Z] [runtime-status] [15255] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-02-24T07:09:21.181Z] [runtime-status] [15255] Running api in mode HTTPS
+[debug] [2020-02-24T07:09:21.184Z] [runtime-status] [15255] Attempting to listen to socketPath: /tmp/fire_emu_15255.sock
+[debug] [2020-02-24T07:09:21.187Z] [functions] Runtime ready! Sending request!
+[debug] [2020-02-24T07:09:21.218Z] [runtime-status] [15255] Ephemeral server handling GET request
+[info] >  params
+[debug] [2020-02-24T07:09:21.224Z] [runtime-status] [15255] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-02-24T07:09:21.226Z] [worker-api-830b654e-1e0d-4cb8-84b3-517a65d0d287]: IDLE
+[debug] [2020-02-24T07:09:21.226Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-02-24T07:10:23.656Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:10:23.916Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:10:24.094Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:10:25.096Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-02-24T07:10:25.099Z] [worker-~diagnostic~-da070109-cf6d-4f00-af0d-15416c7e8fe1]: FINISHING
+[debug] [2020-02-24T07:10:25.099Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-02-24T07:10:25.100Z] [worker-api-830b654e-1e0d-4cb8-84b3-517a65d0d287]: FINISHING
+[debug] [2020-02-24T07:10:25.118Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:10:25.119Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-02-24T07:10:25.119Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:10:25.120Z] [worker-~diagnostic~-b05f2109-178d-43a5-bd03-cf5a174dead1]: Assigning socketPath: /tmp/fire_emu_15291.sock
+[debug] [2020-02-24T07:10:25.120Z] [worker-~diagnostic~-b05f2109-178d-43a5-bd03-cf5a174dead1]: BUSY
+[debug] [2020-02-24T07:10:25.125Z] [worker-~diagnostic~-da070109-cf6d-4f00-af0d-15416c7e8fe1]: exited
+[debug] [2020-02-24T07:10:25.125Z] [worker-~diagnostic~-da070109-cf6d-4f00-af0d-15416c7e8fe1]: FINISHED
+[debug] [2020-02-24T07:10:25.126Z] [worker-api-830b654e-1e0d-4cb8-84b3-517a65d0d287]: exited
+[debug] [2020-02-24T07:10:25.126Z] [worker-api-830b654e-1e0d-4cb8-84b3-517a65d0d287]: FINISHED
+[debug] [2020-02-24T07:10:25.389Z] [runtime-status] [15291] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:10:25.391Z] [runtime-status] [15291] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:10:25.395Z] [runtime-status] [15291] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:10:25.398Z] [runtime-status] [15291] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:10:25.399Z] [runtime-status] [15291] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:10:25.685Z] [worker-~diagnostic~-b05f2109-178d-43a5-bd03-cf5a174dead1]: IDLE
+[debug] [2020-02-24T07:10:28.839Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:10:29.050Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:10:29.228Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:10:30.061Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:10:30.250Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:10:31.251Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-02-24T07:10:31.251Z] [worker-~diagnostic~-b05f2109-178d-43a5-bd03-cf5a174dead1]: FINISHING
+[debug] [2020-02-24T07:10:31.252Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-02-24T07:10:31.253Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-02-24T07:10:31.267Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:10:31.268Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-02-24T07:10:31.268Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:10:31.269Z] [worker-~diagnostic~-1c22a574-0548-4b49-bc6e-99f1a6b6547c]: Assigning socketPath: /tmp/fire_emu_15302.sock
+[debug] [2020-02-24T07:10:31.269Z] [worker-~diagnostic~-1c22a574-0548-4b49-bc6e-99f1a6b6547c]: BUSY
+[debug] [2020-02-24T07:10:31.273Z] [worker-~diagnostic~-b05f2109-178d-43a5-bd03-cf5a174dead1]: exited
+[debug] [2020-02-24T07:10:31.274Z] [worker-~diagnostic~-b05f2109-178d-43a5-bd03-cf5a174dead1]: FINISHED
+[debug] [2020-02-24T07:10:31.576Z] [runtime-status] [15302] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:10:31.578Z] [runtime-status] [15302] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:10:31.582Z] [runtime-status] [15302] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:10:31.585Z] [runtime-status] [15302] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:10:31.586Z] [runtime-status] [15302] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:10:31.865Z] [worker-~diagnostic~-1c22a574-0548-4b49-bc6e-99f1a6b6547c]: IDLE
+[debug] [2020-02-24T07:10:41.628Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-02-24T07:10:41.628Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-02-24T07:10:41.628Z] Accepted request POST /omofonia-e5dac/us-central1/api/voter/info?name=Mudit&mobile=7206307664 --> api
+[debug] [2020-02-24T07:10:41.628Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-02-24T07:10:41.634Z] [worker-pool] addWorker(api)
+[debug] [2020-02-24T07:10:41.634Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-02-24T07:10:41.634Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-02-24T07:10:41.634Z] [worker-api-24d310ad-0816-4bab-84bb-3ccbae0bf329]: Assigning socketPath: /tmp/fire_emu_15317.sock
+[debug] [2020-02-24T07:10:41.634Z] [worker-api-24d310ad-0816-4bab-84bb-3ccbae0bf329]: BUSY
+[debug] [2020-02-24T07:10:41.896Z] [runtime-status] [15317] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:10:41.897Z] [runtime-status] [15317] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:10:41.901Z] [runtime-status] [15317] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:10:41.904Z] [runtime-status] [15317] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:10:41.905Z] [runtime-status] [15317] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:10:42.233Z] [runtime-status] [15317] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-02-24T07:10:42.233Z] [runtime-status] [15317] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-02-24T07:10:42.233Z] [runtime-status] [15317] Running api in mode HTTPS
+[debug] [2020-02-24T07:10:42.236Z] [runtime-status] [15317] Attempting to listen to socketPath: /tmp/fire_emu_15317.sock
+[debug] [2020-02-24T07:10:42.239Z] [functions] Runtime ready! Sending request!
+[debug] [2020-02-24T07:10:42.267Z] [runtime-status] [15317] Ephemeral server handling POST request
+[info] >  hi
+[debug] [2020-02-24T07:10:42.272Z] [runtime-status] [15317] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-02-24T07:10:42.274Z] [worker-api-24d310ad-0816-4bab-84bb-3ccbae0bf329]: IDLE
+[debug] [2020-02-24T07:10:42.274Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-02-24T07:11:26.825Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:11:27.063Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:11:27.252Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:11:28.254Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-02-24T07:11:28.255Z] [worker-~diagnostic~-1c22a574-0548-4b49-bc6e-99f1a6b6547c]: FINISHING
+[debug] [2020-02-24T07:11:28.255Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-02-24T07:11:28.255Z] [worker-api-24d310ad-0816-4bab-84bb-3ccbae0bf329]: FINISHING
+[debug] [2020-02-24T07:11:28.273Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:11:28.274Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-02-24T07:11:28.274Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:11:28.275Z] [worker-~diagnostic~-40b27a0f-c91b-48e1-a62c-fb229777df70]: Assigning socketPath: /tmp/fire_emu_15401.sock
+[debug] [2020-02-24T07:11:28.275Z] [worker-~diagnostic~-40b27a0f-c91b-48e1-a62c-fb229777df70]: BUSY
+[debug] [2020-02-24T07:11:28.280Z] [worker-~diagnostic~-1c22a574-0548-4b49-bc6e-99f1a6b6547c]: exited
+[debug] [2020-02-24T07:11:28.280Z] [worker-~diagnostic~-1c22a574-0548-4b49-bc6e-99f1a6b6547c]: FINISHED
+[debug] [2020-02-24T07:11:28.281Z] [worker-api-24d310ad-0816-4bab-84bb-3ccbae0bf329]: exited
+[debug] [2020-02-24T07:11:28.285Z] [worker-api-24d310ad-0816-4bab-84bb-3ccbae0bf329]: FINISHED
+[debug] [2020-02-24T07:11:28.363Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:11:28.593Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:11:28.689Z] [runtime-status] [15401] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:11:28.692Z] [runtime-status] [15401] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:11:28.698Z] [runtime-status] [15401] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:11:28.700Z] [runtime-status] [15401] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:11:28.701Z] [runtime-status] [15401] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:11:28.979Z] [worker-~diagnostic~-40b27a0f-c91b-48e1-a62c-fb229777df70]: IDLE
+[debug] [2020-02-24T07:11:29.595Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-02-24T07:11:29.595Z] [worker-~diagnostic~-40b27a0f-c91b-48e1-a62c-fb229777df70]: FINISHING
+[debug] [2020-02-24T07:11:29.596Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-02-24T07:11:29.596Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-02-24T07:11:29.611Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:11:29.612Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-02-24T07:11:29.612Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:11:29.613Z] [worker-~diagnostic~-fe8ba1d6-ddc0-4390-aa9f-c5a220c6a081]: Assigning socketPath: /tmp/fire_emu_15412.sock
+[debug] [2020-02-24T07:11:29.613Z] [worker-~diagnostic~-fe8ba1d6-ddc0-4390-aa9f-c5a220c6a081]: BUSY
+[debug] [2020-02-24T07:11:29.617Z] [worker-~diagnostic~-40b27a0f-c91b-48e1-a62c-fb229777df70]: exited
+[debug] [2020-02-24T07:11:29.617Z] [worker-~diagnostic~-40b27a0f-c91b-48e1-a62c-fb229777df70]: FINISHED
+[debug] [2020-02-24T07:11:29.962Z] [runtime-status] [15412] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:11:29.964Z] [runtime-status] [15412] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:11:29.968Z] [runtime-status] [15412] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:11:29.971Z] [runtime-status] [15412] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:11:29.972Z] [runtime-status] [15412] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:11:30.250Z] [worker-~diagnostic~-fe8ba1d6-ddc0-4390-aa9f-c5a220c6a081]: IDLE
+[debug] [2020-02-24T07:11:39.331Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:11:39.520Z] File /media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/voterRoutes/index.js changed, reloading triggers
+[debug] [2020-02-24T07:11:40.521Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-02-24T07:11:40.522Z] [worker-~diagnostic~-fe8ba1d6-ddc0-4390-aa9f-c5a220c6a081]: FINISHING
+[debug] [2020-02-24T07:11:40.523Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-02-24T07:11:40.542Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-24T07:11:40.543Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-02-24T07:11:40.543Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-24T07:11:40.544Z] [worker-~diagnostic~-7c570f06-b863-4a62-93ab-2a3ba8aa1d03]: Assigning socketPath: /tmp/fire_emu_15424.sock
+[debug] [2020-02-24T07:11:40.544Z] [worker-~diagnostic~-7c570f06-b863-4a62-93ab-2a3ba8aa1d03]: BUSY
+[debug] [2020-02-24T07:11:40.547Z] [worker-~diagnostic~-fe8ba1d6-ddc0-4390-aa9f-c5a220c6a081]: exited
+[debug] [2020-02-24T07:11:40.547Z] [worker-~diagnostic~-fe8ba1d6-ddc0-4390-aa9f-c5a220c6a081]: FINISHED
+[debug] [2020-02-24T07:11:40.810Z] [runtime-status] [15424] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:11:40.812Z] [runtime-status] [15424] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:11:40.816Z] [runtime-status] [15424] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:11:40.818Z] [runtime-status] [15424] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:11:40.819Z] [runtime-status] [15424] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:11:41.110Z] [worker-~diagnostic~-7c570f06-b863-4a62-93ab-2a3ba8aa1d03]: IDLE
+[debug] [2020-02-24T07:11:42.971Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-02-24T07:11:42.971Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-02-24T07:11:42.971Z] Accepted request POST /omofonia-e5dac/us-central1/api/voter/info?name=Mudit&mobile=7206307664 --> api
+[debug] [2020-02-24T07:11:42.972Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-02-24T07:11:42.977Z] [worker-pool] addWorker(api)
+[debug] [2020-02-24T07:11:42.977Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-02-24T07:11:42.977Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-02-24T07:11:42.977Z] [worker-api-9d109cf0-d745-41e2-bc4e-4a9de0bbdb60]: Assigning socketPath: /tmp/fire_emu_15440.sock
+[debug] [2020-02-24T07:11:42.977Z] [worker-api-9d109cf0-d745-41e2-bc4e-4a9de0bbdb60]: BUSY
+[debug] [2020-02-24T07:11:43.295Z] [runtime-status] [15440] Functions runtime initialized. {"cwd":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions","node_version":"10.16.2"}
+[debug] [2020-02-24T07:11:43.298Z] [runtime-status] [15440] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-24T07:11:43.305Z] [runtime-status] [15440] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-24T07:11:43.308Z] [runtime-status] [15440] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:11:43.310Z] [runtime-status] [15440] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/media/ciphereck/A68A87AA8A877619/Coding/Project/evoting/omofonía/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-24T07:11:43.746Z] [runtime-status] [15440] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-02-24T07:11:43.746Z] [runtime-status] [15440] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-02-24T07:11:43.746Z] [runtime-status] [15440] Running api in mode HTTPS
+[debug] [2020-02-24T07:11:43.752Z] [runtime-status] [15440] Attempting to listen to socketPath: /tmp/fire_emu_15440.sock
+[debug] [2020-02-24T07:11:43.755Z] [functions] Runtime ready! Sending request!
+[debug] [2020-02-24T07:11:43.795Z] [runtime-status] [15440] Ephemeral server handling POST request
+[info] >  { farmData: [ 'kakd', 'Hi' ],
+[info] >    username: 'kunal',
+[info] >    size: '10',
+[info] >    profile:
+[info] >     { email: 'kunal@gmail.com',
+[info] >       name: 'Kunal',
+[info] >       'Mobile No': '7245407664' },
+[info] >    notif: '11/11/12',
+[info] >    farmerUsername: 'abc',
+[info] >    id: '0' }
+[debug] [2020-02-24T07:11:43.806Z] [runtime-status] [15440] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-02-24T07:11:43.807Z] [worker-api-9d109cf0-d745-41e2-bc4e-4a9de0bbdb60]: IDLE
+[debug] [2020-02-24T07:11:43.807Z] [work-queue] {"queueLength":0,"workRunningCount":3}
