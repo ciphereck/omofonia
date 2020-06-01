@@ -18,7 +18,7 @@ public class RetrofitInstance {
             synchronized (Retrofit.class) {
                 if(retrofit == null) {
                     retrofit = new Retrofit.Builder()
-                            .baseUrl("http://18.188.101.149:3010/")
+                            .baseUrl("http://13.58.174.114:3010/")
                             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                             .addConverterFactory(GsonConverterFactory.create())
                             .build();
