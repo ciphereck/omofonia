@@ -7,18 +7,20 @@ module.exports.giveAadhaarJSON =  function (str, json) {
 	// 	coerce: true,
 	// });
 
-	const jsonFromXML = convert.xml2json(str, {compact: true, spaces: 4})
+	const jst = convert.xml2json(str, {compact: true, spaces: 4})
+	jsonFromXML = JSON.parse(jst)
+//	console.log(jsonFromXML.OfflinePaperlessKyc.UidData)
+	const address = getAddress(jsonFromXML.OfflinePaperlessKyc.UidData.Poa._attributes)
 
-	const address = getAddress(jsonFromXML.OfflinePaperlessKyc.UidData.Poa)
-
-	json.aadhaarName =  jsonFromXML.OfflinePaperlessKyc.UidData.Poi.name,
-	json.dob = jsonFromXML.OfflinePaperlessKyc.UidData.Poi.dob,
-	json.gender = jsonFromXML.OfflinePaperlessKyc.UidData.Poi.gender,
+	json.aadhaarName =  jsonFromXML.OfflinePaperlessKyc.UidData.Poi._attributes.name,
+	json.dob = jsonFromXML.OfflinePaperlessKyc.UidData.Poi._attributes.dob,
+	json.gender = jsonFromXML.OfflinePaperlessKyc.UidData.Poi._attributes.gender,
 	json.address = address,
-	json.hasedEmail =  jsonFromXML.OfflinePaperlessKyc.UidData.Poi.e,
-	json.hashedMobileNo =  jsonFromXML.OfflinePaperlessKyc.UidData.Poi.m,
-	json.picInJP2000 = jsonFromXML.OfflinePaperlessKyc.UidData.Pht
-
+	json.hasedEmail =  jsonFromXML.OfflinePaperlessKyc.UidData.Poi._attributes.e,
+	json.hashedMobileNo =  jsonFromXML.OfflinePaperlessKyc.UidData.Poi._attributes.m,
+	json.picInJP2000 = jsonFromXML.OfflinePaperlessKyc.UidData.Pht._text
+//	console.log(json)
+	//console.log(jsonFromXML.OfflinePaperlessKyc.UidData.Poi)
 	return json
 }
 
